@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$lime-color: #bef66b;
+$gray-color: #292d32;
+$light-gray-color: #eeeeee;
+
+// global styles
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+a,
+img,
+button {
+  transition: all 0.4s;
+}
+// media and diff screens and stuff
+@media (min-width: 768px) {
+  i {
+    font-size: 24px;
+  }
+}
+// global classes
+a.active {
+  color: $light-gray-color;
+}
+.lemon-line {
+  width: 100%;
+  background-color: $lime-color;
+  height: 2px;
+}
+.underline {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+// pages styles
