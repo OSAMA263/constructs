@@ -1,22 +1,21 @@
 import { AnimatePresence } from "framer-motion";
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Fallback from "./components/shared/Fallback";
 import Navbar from "./components/Navbar";
-import Home from "./components/pages/home/Home"
+import Home from "./components/pages/home/Home";
 
 export default function App() {
   const location = useLocation();
-
-  
+  // try animate presence with page navigate to see if the bug still there
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <AnimatePresence mode="wait">
         <Suspense fallback={<Fallback />}>
           <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />}>
-              {/* <Route path="about" element={<About />} /> */}
+            <Route path="/" element={<Home />}/>
+              <Route path="about" element={<About />} />
               {/* <Route path="servcies" element={<Servcies />} > */}
               {/* <Route path="residentail" element={<rResidentail />} /> */}
               {/* <Route path="commercail" element={<Commercail />} /> */}
@@ -39,12 +38,13 @@ export default function App() {
               {/* <Route path="product" element={<Product />}/ > */}
               {/* </Route> */}
               {/* <Route path="contact" element={<Contact />} /> */}
-            </Route> 
+         
           </Routes>
         </Suspense>
       </AnimatePresence>
       {/* <Footer/> */}
-
     </>
   );
 }
+
+const About =lazy(()=>import('./components/pages/about/About'))

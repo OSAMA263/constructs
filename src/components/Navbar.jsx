@@ -2,34 +2,43 @@ import tw from "tailwind-styled-components";
 import { IoMdCart } from "react-icons/io";
 import { NavLink, useLocation, useParams } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
   // hoverd link
   const [hoverdLink, setHoverdLink] = useState("/");
+  const [linkColor, setLinkColor] = useState("white");
   const { pathname } = useLocation();
 
+  useEffect(() => {
+    setHoverdLink(pathname);
+    setLinkColor(pathname === "/" || pathname === "/blog" ? "white" : "black");
+  }, [pathname]);
+
   return (
-    <Header>
+    <Header className={linkColor === "white" ? "text-white" : "text-black"}>
       logo
       <Nav>
         <ul className="flex gap-x-8 font-light uppercase">
           {navLinks.map(({ label, url }) => (
-            <li className="relative" key={label}>
+            <li key={label}>
               <NavLink
+                className="relative px-[1px]"
                 onMouseEnter={() => setHoverdLink(url)}
                 onMouseLeave={() => setHoverdLink(pathname)}
                 to={url}
               >
                 {label}
+                {/* line under link */}
+                {hoverdLink === url && (
+                  <motion.div
+                    layoutId="underline"
+                    className={`${
+                      linkColor === "white" ? "bg-white" : "bg-black"
+                    } h-[1px] w-full absolute`}
+                  ></motion.div>
+                )}
               </NavLink>
-              {/* line under link */}
-              {hoverdLink === url && (
-                <motion.div
-                  layoutId="underline"
-                  className="underline"
-                ></motion.div>
-              )}
             </li>
           ))}
         </ul>
@@ -49,7 +58,7 @@ top-0
 left-1/2
 -translate-x-1/2
 py-8
-text-white
+
 `;
 
 const Nav = tw.nav`
