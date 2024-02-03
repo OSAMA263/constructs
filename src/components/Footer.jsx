@@ -1,0 +1,94 @@
+import { Link } from "react-router-dom";
+import tw from "tailwind-styled-components";
+import LayoutSection from "./shared/LayoutSection";
+
+export default function Footer() {
+  return (
+    <div className="pb-10 text-white bg-black pt-28">
+      <LayoutSection styles="w-[60%]">
+        <Container>
+          <Link to="/" className="w-fit h-fit" aria-label="home page">
+            <img src="logo-white.svg" className="w-52" alt="log" />
+          </Link>
+          {LINKS_DATA.map((column, i) => (
+            <ListLinks key={i + "column"}>
+              {column.map(({ label, url }) => (
+                <li
+                  className="overflow-hidden [&>div]:hover:-translate-y-6 w-fit"
+                  key={label}
+                >
+                  <div className="relative transition-all duration-500">
+                    <Link to={url}>{label}</Link>
+                    <Link
+                      className="absolute block text-lime min-w-max"
+                      to={url}
+                    >
+                      {label}
+                    </Link>
+                  </div>
+                </li>
+              ))}
+            </ListLinks>
+          ))}
+        </Container>
+        {/* LARGE LOGO WITH CONTACT SOCIALMEDIA */}
+        <div className="flex flex-col items-center pb-10 mt-20 border-b gap-y-10">
+          <img src="logo-white.svg" className="w-[60%]" alt="logo" />
+          <div className="space-x-6 [&_a:hover]:text-lime">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.instagram.com/"
+            >
+              Instagram
+            </a>
+            <a target="_blank" rel="noreferrer" href="https://www.youtube.com/">
+              Youtube
+            </a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.facebook.com/"
+            >
+              Facebook
+            </a>
+          </div>
+        </div>
+        <h1 className="mt-4">
+          Built By <span className="text-lime">Osama Khaled</span>
+        </h1>
+      </LayoutSection>
+    </div>
+  );
+}
+
+const Container = tw.footer`
+grid 
+grid-cols-3
+text-white
+`;
+
+const ListLinks = tw.ul`
+text-center
+space-y-4
+flex 
+flex-col 
+items-center
+`;
+
+const LINKS_DATA = [
+  [
+    { label: "home", url: "/" },
+    { label: "about", url: "about" },
+    { label: "teams", url: "teams" },
+    { label: "services", url: "services" },
+    { label: "service single", url: "" },
+  ],
+  [
+    { label: "blogs", url: "blogs" },
+    { label: "blog single", url: "" },
+    { label: "projects", url: "projects" },
+    { label: "project single", url: "" },
+    { label: "contact", url: "contact" },
+  ],
+];

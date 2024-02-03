@@ -36,46 +36,4 @@ const servicesGrid = [
     bigText: "We specialize in breathing new life into existing spaces.",
   },
 ];
-const allProjectsSwiper = [
-  { title: "Resort", text: "A touch of paradise.", img: "projects/resort.jpg" },
-  {
-    title: "Mall",
-    text: "A modern retail destination.",
-    img: "projects/mall.jpg",
-  },
-  { title: "Condo", text: "A contemporary home.", img: "projects/condo.jpg" },
-];
-const ourBlog = [
-  {
-    bg: "blog/article1.jpg",
-    details: {
-      avatar: "avatar1.jpg",
-      name: "STEVE DAVIS",
-      role: "ENVIRONMENT",
-      date: "DEC 8, 2023",
-    },
-    text: "Sustainable Building Practices",
-  },
-  {
-    bg: "blog/article2.jpg",
-    details: {
-      avatar: "avatar2.jpg",
-      name: "JOHN SMITH",
-      role: "RESERCH",
-      date: "DEC 8, 2023",
-    },
-    text: "Choosing the Right Contractor",
-  },
-  {
-    bg: "blog/article3.jpg",
-    details: {
-      avatar: "avatar3.jpg",
-      name: "JANE DOE",
-      role: "SAFETY",
-      date: "DEC 8, 2023",
-    },
-    text: "Creating a Safe Construction Site",
-  },
-];
-
-export { swiperOpacityImgs, servicesGrid, allProjectsSwiper, ourBlog };
+export { swiperOpacityImgs, servicesGrid,  };

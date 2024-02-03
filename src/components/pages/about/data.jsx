@@ -1,6 +1,4 @@
 import { BsBuildingGear, BsHouseDoor, BsBuildings } from "react-icons/bs";
-import { FaLocationArrow } from "react-icons/fa";
-import { RiArrowLeftDoubleLine } from "react-icons/ri";
 
 const ourStory = [
   "Founded in 2014, Constructs came into existence driven by a shared passion for craftsmanship, innovation, and the expansive horizons within the construction industry.",
@@ -32,30 +30,4 @@ const history = [
     text: "Consectetur adipiscing elit, suspendisse varius eros.",
   },
 ];
-const theTeam = [
-  {
-    img: "about/Steve Davis.jpg",
-    name: "Steve Davis",
-    role: "CEO",
-    des: "Steve Davis is an experienced CEO with over a decade of experience.",
-  },
-  {
-    img: "about/Jane Doe.jpg",
-    name: "Jane Doe",
-    role: "ENGINEER",
-    des: "Jane Doe is a seasoned engineer with over 10 years of experience.",
-  },
-  {
-    img: "about/John Smith.jpg",
-    name: "John Smith",
-    role: "FOREMAN",
-    des: "John Smith is a seasoned foreman with over 15 years of experience.",
-  },
-];
-const ourValues = [
-  { icon: <FaLocationArrow />, title: "Hardwork", text: "" },
-  { icon: <RiArrowLeftDoubleLine />, title: "Innovation", text: "" },
-  { icon: <BsBuildingGear />, title: "Quality", text: "" },
-  { icon: <BsBuildings />, title: "Service", text: "" },
-];
-export { ourStory, history, theTeam, ourValues };
+export { ourStory, history,  };

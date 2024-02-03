@@ -1,12 +1,12 @@
-import { useState } from "react";
 import LayoutSection from "../../../shared/LayoutSection";
 import tw from "tailwind-styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
-import { allProjectsSwiper } from "../data";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import CurveImg from "./CurveImg";
+import SectionTitle from "../../../shared/SectionTitle";
+import { projects_data } from "../../projects/data";
 
 export default function AllProjects() {
   return (
@@ -14,18 +14,17 @@ export default function AllProjects() {
       <div className="rounded-t-[60px] overflow-hidden">
         <div className="relative h-[55vh]">
           <ProjectsTitle>
-            <h1 className="font-bold text-5xl">
-              All
-              <span className="!text-lime italic !font-normal"> Projects</span>
-            </h1>
-            <span>OUR LATEST</span>
-            <p className="font-medium text-lightGray">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
+            <SectionTitle
+              h1="All"
+              h2="Projects"
+              par="OUR LATEST"
+              styles="flex flex-col text-center border-transparent !mb-10 [&_h3]:text-lightGray [&_h1]:text-white [&_h2]:text-lime [&_p]:text-lightGray"
+            />
           </ProjectsTitle>
+          {/* zomom in img */}
           <img
             src="swiper1.jpg"
-            className="w-full object-cover h-full"
+            className="object-cover w-full h-full"
             alt="zoomingin-tall-building"
           />
         </div>
@@ -47,11 +46,12 @@ const SwiperFolders = () => {
     },
     modules: [Navigation],
   };
-
+  const threeSlides = projects_data.filter((_, i) => i % 2 === 0 && _);
+  
   return (
     <div className="bg-lime">
       <Swiper {...swiperProps} className="!w-[60%] py-20 mx-auto !relative">
-        {allProjectsSwiper.map(({ title, text, img }) => (
+        {threeSlides.map(({ title, text, img }) => (
           <SwiperSlide key={title}>
             <Slide {...{ title, text, img }} />
           </SwiperSlide>
@@ -71,13 +71,13 @@ const Slide = ({ title, text, img }) => {
   return (
     <div className="rounded-2xl overflow-hidden w-full h-full hover:[&_img]:scale-110">
       <div className="absolute z-10 bg-lime rounded-br-2xl rounded-tl-2xl">
-        <div className="relative font-medium flex items-center gap-x-10 p-4 px-16">
+        <div className="relative flex items-center p-4 px-16 font-medium gap-x-10">
           <h1 className="text-4xl">{title}</h1>
           <p>{text}</p>
           <CurveImg curveColor="lime" tr bl />
         </div>
       </div>
-      <img src={img} className="h-full w-full" alt={img} />
+      <img src={img} className="w-full h-full" alt={img} />
     </div>
   );
 };
@@ -106,7 +106,6 @@ gap-y-4
 items-center
 justify-end
 text-white 
-py-8
 `;
 
 // zoom on imge on scroll

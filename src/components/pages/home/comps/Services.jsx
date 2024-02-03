@@ -6,11 +6,18 @@ import { motion } from "framer-motion";
 import ArrowButton from "./ArrowButton";
 import LayoutSection from "../../../shared/LayoutSection";
 import { servicesGrid } from "../data";
+import SectionTitle from "../../../shared/SectionTitle";
 
 export default function Services() {
   return (
     <LayoutSection styles="w-[60%] py-28">
-      <Header />
+      <SectionTitle
+        h1="Our"
+        h2="Services"
+        par="OVERVIEW"
+        styles="flex-between border-lime [&_h1]:text-white [&_h2]:text-lime [&_h3]:text-lightGray [&_p]:text-lightGray"
+      />
+      {/* 3 ROWS GRID CARDS */}
       <div className="space-y-32">
         {servicesGrid.map((row, i) => (
           <GridColumn
@@ -25,21 +32,6 @@ export default function Services() {
   );
 }
 
-const Header = () => {
-  return (
-    <div className="flex-between border-b border-lime py-4 mb-20">
-      <div className="text-6xl">
-        <span className="font-bold text-white">Our</span>
-        <span className="text-lime italic font-extralight"> Services</span>
-      </div>
-      <div className="space-y-4 text-lightGray font-medium">
-        <p>OVERVIEW</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      </div>
-    </div>
-  );
-};
-
 const GridColumn = ({ flexDir, data, i }) => {
   const { title, bigImg, smallImg, card, bigText } = data;
 
@@ -51,7 +43,7 @@ const GridColumn = ({ flexDir, data, i }) => {
           <div className="flex-between gap-x-10">
             <h1>{title}</h1>
             <div className="lime-line"></div>
-            <h3 className="px-6 py-2 text-darkGray rounded-lg tracking-widest bg-lime">
+            <h3 className="px-6 py-2 tracking-widest rounded-lg text-darkGray bg-lime">
               LEARN MORE
             </h3>
           </div>
@@ -60,10 +52,10 @@ const GridColumn = ({ flexDir, data, i }) => {
             <img
               src={bigImg}
               alt={bigImg}
-              className="absolute w-full rounded-2xl h-full object-cover"
+              className="absolute object-cover w-full h-full rounded-2xl"
             />
             <div className="absolute">
-              <h2 className="text-outline relative p-4 rounded-br-2xl text-5xl w-fit bg-black">
+              <h2 className="relative p-4 text-5xl bg-black text-outline rounded-br-2xl w-fit">
                 0{i + 1} Service <CurveImg tr bl curveColor="black" />
               </h2>
             </div>
@@ -78,7 +70,7 @@ const GridColumn = ({ flexDir, data, i }) => {
             <img
               src={smallImg}
               alt={smallImg}
-              className="w-full h-full object-cover"
+              className="object-cover w-full h-full"
             />
           </div>
           <Card>

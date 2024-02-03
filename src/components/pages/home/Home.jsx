@@ -3,45 +3,52 @@ import CurveImg from "./comps/CurveImg";
 import Services from "./comps/Services";
 import SwiperOpacity from "./comps/SwiperOpacity";
 import AllProjects from "./comps/AllProjects";
-import OurBlog from "./comps/OurBlog";
-import GetStarted from "./comps/GetStarted";
+import GetStarted from "../../shared/GetStarted";
+import PageWrapper from "../../PageWrapper";
+import { BlogsGrid } from "../blog/Blog";
 
 export default function Home() {
   return (
-    <main className="bg-black">
+    <PageWrapper bg="bg-black">
       <SwiperOpacity />
       {/* 3 folders grid bg lime section */}
-      <div className="p-28 bg-lime rounded-[60px]">
-        <ThreeFolders>
-          <FolderGrid
-            title="RESIDENTIAL"
-            num="469"
-            styles="text-black [&_p]:text-darkGray [&_span]:bg-black bg-white"
-            par="We are the ideal choice"
-          />
-          <FolderGrid
-            title="COMMERCIAL"
-            num="136"
-            styles="text-white [&_p]:text-lightGray [&_span]:bg-lime bg-darkGray"
-            par="Our skilled craftsmen"
-          />
-          <FolderGrid
-            title="RENOVATION"
-            num="269"
-            styles="text-white [&_p]:text-white [&_span]:bg-white bg-black"
-            par="We are the right choose"
-          />
-        </ThreeFolders>
-      </div>
+      <GridFolders />
       <Services />
       <AllProjects />
-      <OurBlog />
-      <GetStarted />
-    </main>
+      <BlogsGrid />
+      <GetStarted overlayBgc="bg-gray-200" />
+    </PageWrapper>
   );
 }
 
-const FolderGrid = (props) => {
+export const GridFolders = () => {
+  return (
+    <div className="p-28 bg-lime rounded-t-[60px]">
+      <ThreeFolders>
+        <Folder
+          title="RESIDENTIAL"
+          num="469"
+          styles="text-black [&_p]:text-darkGray [&_span]:bg-black bg-white"
+          par="We are the ideal choice"
+        />
+        <Folder
+          title="COMMERCIAL"
+          num="136"
+          styles="text-white [&_p]:text-lightGray [&_span]:bg-lime bg-darkGray"
+          par="Our skilled craftsmen"
+        />
+        <Folder
+          title="RENOVATION"
+          num="269"
+          styles="text-white [&_p]:text-white [&_span]:bg-white bg-black"
+          par="We are the right choose"
+        />
+      </ThreeFolders>
+    </div>
+  );
+};
+
+const Folder = (props) => {
   const { title, num, styles, par } = props;
 
   return (
@@ -52,9 +59,9 @@ const FolderGrid = (props) => {
           <CurveImg tr bl curveColor="lime" />
         </h1>
       </div>
-      <div className="flex flex-col justify-center py-4 items-center space-y-2">
-        <h1 className="text-8xl font-bold">{num}</h1>
-        <h2 className="italic text-4xl font-extralight">projects</h2>
+      <div className="flex flex-col items-center justify-center py-4 space-y-2">
+        <h1 className="font-bold text-8xl">{num}</h1>
+        <h2 className="text-4xl italic font-extralight">projects</h2>
         <span className="w-[10%] h-[1px] mx-auto !mt-4"></span>
         <p className="text-lg">{par}</p>
       </div>

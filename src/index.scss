@@ -18,12 +18,63 @@ body {
   padding: 0px;
   box-sizing: content-box;
   font-family: Archivo, sans-serif;
-}
-a,
-img,
-svg,
-button {
-  transition: all 0.4s;
+  a,
+  img,
+  svg,
+  button,
+  input,
+  textarea {
+    transition: all 0.4s;
+  }
+  input,
+  textarea {
+    border: 1px solid #9ca3af;
+    background-color: #f3f4f6;
+    &:placeholder {
+      color: #9ca3af;
+    }
+    &:focus {
+      border: 1px solid black;
+    }
+  }
+  
+  a.active {
+    color: $light-gray-color;
+  }
+  a {
+    &:hover .lime-button {
+      background: #000;
+      color: white;
+    }
+    .lime-button {
+      border-radius: 50%;
+      background: $lime-color;
+      width: fit-content;
+      right: 10px;
+      bottom: 10px;
+      position: absolute;
+      z-index: 69;
+      color: black;
+      padding: 6px;
+    }
+  }
+  // global classes
+  .lime-line {
+    width: 100%;
+    background-color: $lime-color;
+    height: 1px;
+    border-radius: 10%;
+  }
+  .flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .text-outline {
+    -webkit-text-stroke-color: rgb(255, 255, 255) !important;
+    -webkit-text-stroke-width: 1px !important;
+    color: transparent !important;
+  }
 }
 // media and diff screens and stuff
 @media (min-width: 768px) {
@@ -31,41 +82,9 @@ button {
     font-size: 24px;
   }
 }
-// global classes
-a.active {
-  color: $light-gray-color;
+.swiper-pagination-bullet-active {
+  background: #000 !important;
 }
-.lime-line {
-  width: 100%;
-  background-color: $lime-color;
-  height: 1px;
-  border-radius: 10%;
-}
-.flex-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-a {
-  &:hover .lime-button {
-    background: #000;
-    color: white;
-  }
-  .lime-button {
-    border-radius: 50%;
-    background: $lime-color;
-    width: fit-content;
-    right: 10px;
-    bottom: 10px;
-    position: absolute;
-    z-index: 69;
-    color: black;
-    padding: 6px;
-  }
-}
-.text-outline {
-  -webkit-text-stroke-color: rgb(255, 255, 255) !important;
-  -webkit-text-stroke-width: 1px !important;
-  color: transparent !important;
+.swiper-pagination-bullet {
 }
 // pages styles

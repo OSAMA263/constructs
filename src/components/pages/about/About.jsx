@@ -1,12 +1,15 @@
 import LayoutSection from "../../shared/LayoutSection";
-import { Link } from "react-router-dom";
-import { IoArrowForward } from "react-icons/io5";
 import OurStory from "./comps/OurStory";
 import TheTeam from "./comps/TheTeam";
+import OurValues from "./comps/OurValues";
+import LimeButtonArrow from "../../shared/LimeButtonArrow";
+import { Link } from "react-scroll";
+import GetStarted from "../../shared/GetStarted";
+import PageWrapper from "../../PageWrapper";
 
 export default function About() {
   return (
-    <main className="bg-gray-100">
+    <PageWrapper bg="bg-gray-100">
       <LayoutSection styles="py-44 w-[60%]">
         <Hero />
         {/* zoom in image */}
@@ -18,29 +21,37 @@ export default function About() {
           />
         </div>
       </LayoutSection>
-      {/*  */}
-      <OurStory/>
-      {/*  */}
-      <TheTeam/>
-    </main>
+      <OurStory />
+      <TheTeam />
+      <OurValues />
+      <GetStarted overlayBgc="bg-lime" />
+    </PageWrapper>
   );
 }
 
 const Hero = () => {
   return (
-    <div className="flex flex-col gap-y-4 items-center">
+    <div className="flex flex-col items-center gap-y-4">
       {/* HERO LARGE TEXT */}
-      <div className="font-bold text-7xl tracking-wider space-y-2">
+      <div className="space-y-2 font-bold tracking-wider text-7xl">
         <h1>
-          GET TO<span className="font-extralight italic"> KNOW</span>
+          GET TO<span className="italic font-extralight"> KNOW</span>
         </h1>
-        <div className="font-extralight italic flex gap-x-1">
+        <div className="flex italic font-extralight gap-x-1">
           <h2>ABOUT</h2>
           {/* 3 AVATAR IMAGES */}
           <div className="flex items-center [&_img]:rounded-full [&_img]:absolute w-full relative [&_img]:border-4 [&_img]:border-lime">
-            <img src="avatar1.jpg" alt="" className="w-16 " />
-            <img src="avatar2.jpg" alt="" className="w-16 translate-x-12" />
-            <img src="avatar3.jpg" alt="" className="w-16 translate-x-24" />
+            <img src="team/Jane Doe.jpg" alt="Jane Doe" className="w-16 " />
+            <img
+              src="team/John Smith.jpg"
+              alt="John Smith"
+              className="w-16 translate-x-12"
+            />
+            <img
+              src="team/Steve Davis.jpg"
+              alt="Steve Davis"
+              className="w-16 translate-x-24"
+            />
           </div>
           <span className="font-bold">US</span>
         </div>
@@ -50,13 +61,9 @@ const Hero = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
         convallis.
       </p>
-      {/* LIME BG BUTTON */}
-      <Link className="p-4 font-medium rounded-xl bg-lime [&_svg]:-rotate-45 [&:hover_svg]:rotate-0">
-        <span className="flex items-center gap-x-2">
-          LEARN MORE
-          <IoArrowForward />
-        </span>
-      </Link>
+      <LimeButtonArrow text="learn more">
+        <Link smooth to="story"></Link>
+      </LimeButtonArrow>
     </div>
   );
 };
