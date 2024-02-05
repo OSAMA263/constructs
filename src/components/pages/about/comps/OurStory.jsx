@@ -1,5 +1,7 @@
 import LayoutSection from "../../../shared/LayoutSection";
 import SectionTitle from "../../../shared/SectionTitle";
+import SlideUpElement from "../../../shared/SlideUpElement";
+import ZoomInImage from "../../../shared/ZoomInImage";
 import { ourStory, history } from "../data";
 import tw from "tailwind-styled-components";
 
@@ -27,16 +29,18 @@ const WhoWeAre = () => {
       />
       {/* article with zoomed in img on scroll */}
       <Article>
-        <div className="flex-col leading-6 flex-between gap-y-6">
-          {ourStory.map((par, i) => (
-            <p key={i + "line"}>{par}</p>
-          ))}
+        <div className="overflow-hidden">
+          <SlideUpElement offsetY="20%" offsetX="100%">
+            <article className="flex-col leading-6 flex-between gap-y-6">
+              {ourStory.map((par, i) => (
+                <p key={i + "line"}>{par}</p>
+              ))}
+            </article>
+          </SlideUpElement>
         </div>
-        <img
-          src="about/tall building.jpg"
-          className="h-full rounded-2xl"
-          alt=""
-        />
+        <div className="rounded-2xl overflow-hidden">
+          <ZoomInImage src="swiper2.jpg" offsetY="1" />
+        </div>
       </Article>
     </div>
   );
@@ -46,19 +50,23 @@ const History = () => {
   return (
     <HistoryGrid>
       {history.map((obj, i) => (
-        <div key={i} className="items-center flex-between pe-20 gap-x-6">
-          {i % 2 !== 0 && (
-            <>
-              <div className="flex flex-col font-semibold gap-y-2 min-w-max">
-                <span className="p-6 text-3xl bg-darkGray w-fit rounded-xl text-lime">
-                  {obj.icon}
-                </span>
-                <h1 className="text-3xl font-bold">{obj.state}</h1>
-                <p className="text-lime">{obj.date}</p>
-              </div>
-              <h1>{obj.text}</h1>
-            </>
-          )}
+        <div className="overflow-hidden" key={i}>
+          <SlideUpElement offsetY="40%" offsetX="-100%">
+            <div className="items-center flex-between pe-20 gap-x-6">
+              {i % 2 !== 0 && (
+                <>
+                  <div className="flex flex-col font-semibold gap-y-2 min-w-max">
+                    <span className="p-6 text-3xl bg-darkGray w-fit rounded-xl text-lime">
+                      {obj.icon}
+                    </span>
+                    <h1 className="text-3xl font-bold">{obj.state}</h1>
+                    <p className="text-lime">{obj.date}</p>
+                  </div>
+                  <h1>{obj.text}</h1>
+                </>
+              )}
+            </div>
+          </SlideUpElement>
         </div>
       ))}
       <LineWithDots />

@@ -6,16 +6,22 @@ import AllProjects from "./comps/AllProjects";
 import GetStarted from "../../shared/GetStarted";
 import PageWrapper from "../../PageWrapper";
 import { BlogsGrid } from "../blog/Blog";
+import SlideUpElement from "../../shared/SlideUpElement";
 
 export default function Home() {
   return (
-    <PageWrapper bg="bg-black">
+    <PageWrapper
+      title="Constructs"
+      description="rendom shit pla pla get Loremed ipsum dolor sit amet consectetur, adipisicing elit. Laborum quo fugit adipisci assumenda nesciunt dignissimos."
+      href="/"
+      bg="bg-black"
+    >
       <SwiperOpacity />
       {/* 3 folders grid bg lime section */}
       <GridFolders />
       <Services />
       <AllProjects />
-      <BlogsGrid />
+      <BlogsGrid homeUrl="blogs" />
       <GetStarted overlayBgc="bg-gray-200" />
     </PageWrapper>
   );
@@ -25,24 +31,30 @@ export const GridFolders = () => {
   return (
     <div className="p-28 bg-lime rounded-t-[60px]">
       <ThreeFolders>
-        <Folder
-          title="RESIDENTIAL"
-          num="469"
-          styles="text-black [&_p]:text-darkGray [&_span]:bg-black bg-white"
-          par="We are the ideal choice"
-        />
-        <Folder
-          title="COMMERCIAL"
-          num="136"
-          styles="text-white [&_p]:text-lightGray [&_span]:bg-lime bg-darkGray"
-          par="Our skilled craftsmen"
-        />
-        <Folder
-          title="RENOVATION"
-          num="269"
-          styles="text-white [&_p]:text-white [&_span]:bg-white bg-black"
-          par="We are the right choose"
-        />
+        <SlideUpElement offsetY="70%" ind={1}>
+          <Folder
+            title="RESIDENTIAL"
+            num="469"
+            styles="text-black [&_p]:text-darkGray [&_span]:bg-black bg-white"
+            par="We are the ideal choice"
+          />
+        </SlideUpElement>
+        <SlideUpElement offsetY="70%" ind={2}>
+          <Folder
+            title="COMMERCIAL"
+            num="136"
+            styles="text-white [&_p]:text-lightGray [&_span]:bg-lime bg-darkGray"
+            par="Our skilled craftsmen"
+          />
+        </SlideUpElement>
+        <SlideUpElement offsetY="70%" ind={3}>
+          <Folder
+            title="RENOVATION"
+            num="269"
+            styles="text-white [&_p]:text-white [&_span]:bg-white bg-black"
+            par="We are the right choose"
+          />
+        </SlideUpElement>
       </ThreeFolders>
     </div>
   );

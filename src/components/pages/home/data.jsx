@@ -12,6 +12,7 @@ const servicesGrid = [
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     },
     bigText: "Our skilled craftsmen specialize in residential construction.",
+    url:"services/residential"
   },
   {
     title: "Commercial",
@@ -23,6 +24,7 @@ const servicesGrid = [
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     },
     bigText: "We are the ideal choice for commercial construction.",
+    url:"services/commercial"
   },
   {
     title: "Renovation",
@@ -34,6 +36,7 @@ const servicesGrid = [
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     },
     bigText: "We specialize in breathing new life into existing spaces.",
+    url:"services/renovation"
   },
 ];
 export { swiperOpacityImgs, servicesGrid,  };

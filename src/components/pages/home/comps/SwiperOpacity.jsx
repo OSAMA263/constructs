@@ -7,6 +7,7 @@ import CurveImg from "./CurveImg";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useState } from "react";
 import { swiperOpacityImgs } from "../data";
+import SlideUpElement from "../../../shared/SlideUpElement";
 
 export default function SwiperOpacity() {
   const [activeImg, setActiveImg] = useState(0);
@@ -22,52 +23,54 @@ export default function SwiperOpacity() {
   };
   return (
     <LayoutSection styles="w-[60%] py-28">
-      <motion.div
-        animate="animate"
-        whileHover="whileHover"
-        className="relative"
-      >
-        <NavLink className="relative">
-          <AnimatePresence mode="popLayout">
-            <motion.div key={activeImg} {...imagesVariants}>
-              <div className="flex-between gap-x-6">
-                <h1 className="text-7xl text-white font-bold min-w-max">
-                  Top Tier Builders
-                </h1>
-                <div className="lime-line"></div>
-                <span className="px-6 py-2 text-darkGray font-medium rounded-lg tracking-widest bg-lime">
-                  RESIDENTIAL
-                </span>
-              </div>
-              <Folder>
-                <img
-                  src={swiperOpacityImgs[activeImg]}
-                  alt={swiperOpacityImgs[activeImg]}
-                  className="absolute w-full h-full rounded-xl object-cover"
-                />
-                <div className="absolute">
-                  <h1>
-                    <CurveImg tr curveColor="black" /> Construction
+      <SlideUpElement offsetY="20%">
+        <motion.div
+          animate="animate"
+          whileHover="whileHover"
+          className="relative"
+        >
+          <NavLink to="/about" className="relative">
+            <AnimatePresence mode="popLayout">
+              <motion.div key={activeImg} {...imagesVariants}>
+                <div className="flex-between gap-x-6">
+                  <h1 className="font-bold text-white text-7xl min-w-max">
+                    Top Tier Builders
                   </h1>
-                  <h1>
-                    <CurveImg tr bl curveColor="black" /> Experts
-                  </h1>
+                  <div className="lime-line"></div>
+                  <span className="px-6 py-2 font-medium tracking-widest rounded-lg text-darkGray bg-lime">
+                    RESIDENTIAL
+                  </span>
                 </div>
-              </Folder>
-              <ArrowButton />
-            </motion.div>
-          </AnimatePresence>
-        </NavLink>
-        {/* swiper navigation controls */}
-        <SwiperControlsWrapper>
-          <button onClick={handleNextImg}>
-            <IoIosArrowForward />
-          </button>
-          <button onClick={handlePrevImg}>
-            <IoIosArrowBack />
-          </button>
-        </SwiperControlsWrapper>
-      </motion.div>
+                <Folder>
+                  <img
+                    src={swiperOpacityImgs[activeImg]}
+                    alt={swiperOpacityImgs[activeImg]}
+                    className="absolute object-cover w-full h-full rounded-xl"
+                  />
+                  <div className="absolute">
+                    <h1>
+                      <CurveImg tr curveColor="black" /> Construction
+                    </h1>
+                    <h1>
+                      <CurveImg tr bl curveColor="black" /> Experts
+                    </h1>
+                  </div>
+                </Folder>
+                <ArrowButton />
+              </motion.div>
+            </AnimatePresence>
+          </NavLink>
+          {/* swiper navigation controls */}
+          <SwiperControlsWrapper>
+            <button onClick={handleNextImg}>
+              <IoIosArrowForward />
+            </button>
+            <button onClick={handlePrevImg}>
+              <IoIosArrowBack />
+            </button>
+          </SwiperControlsWrapper>
+        </motion.div>
+      </SlideUpElement>
     </LayoutSection>
   );
 }

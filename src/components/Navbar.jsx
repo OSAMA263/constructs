@@ -1,6 +1,6 @@
 import tw from "tailwind-styled-components";
-import { Link, NavLink, useLocation, useParams } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import {  motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
@@ -9,13 +9,18 @@ export default function Navbar() {
   const [linkColor, setLinkColor] = useState("white");
   const { pathname } = useLocation();
 
+  // changes active link & underline color
   useEffect(() => {
     setHoverdLink(pathname);
-    // changes navlinks color
-    if (pathname === "/" || pathname === "/projects"||pathname==="/team") {
-      setLinkColor("white");
-    } else {
+    if (
+      pathname === "/about" ||
+      pathname === "/services" ||
+      pathname === "/blogs" ||
+      pathname === "/contact"
+    ) {
       setLinkColor("black");
+    } else {
+      setLinkColor("white");
     }
   }, [pathname]);
 
@@ -78,6 +83,6 @@ const navLinks = [
   { label: "about", url: "/about" },
   { label: "services", url: "/services" },
   { label: "projects", url: "/projects" },
-  { label: "blog", url: "/blog" },
+  { label: "blogs", url: "/blogs" },
   { label: "contact", url: "/contact" },
 ];

@@ -7,7 +7,9 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import CurveImg from "./CurveImg";
 import SectionTitle from "../../../shared/SectionTitle";
 import { projects_data } from "../../projects/data";
-
+import { Link } from "react-router-dom";
+import SlideUpElement from "../../../shared/SlideUpElement";
+import ZoomInImage from  "../../../shared/ZoomInImage"
 export default function AllProjects() {
   return (
     <LayoutSection styles="">
@@ -22,11 +24,7 @@ export default function AllProjects() {
             />
           </ProjectsTitle>
           {/* zomom in img */}
-          <img
-            src="swiper1.jpg"
-            className="object-cover w-full h-full"
-            alt="zoomingin-tall-building"
-          />
+          <ZoomInImage src="swiper1.jpg"/>
         </div>
         <SwiperFolders />
       </div>
@@ -47,38 +45,42 @@ const SwiperFolders = () => {
     modules: [Navigation],
   };
   const threeSlides = projects_data.filter((_, i) => i % 2 === 0 && _);
-  
+
   return (
     <div className="bg-lime">
-      <Swiper {...swiperProps} className="!w-[60%] py-20 mx-auto !relative">
-        {threeSlides.map(({ title, text, img }) => (
-          <SwiperSlide key={title}>
-            <Slide {...{ title, text, img }} />
-          </SwiperSlide>
-        ))}
-        <SwiperControl className="right-0" aria-label="next image" id="next">
-          <IoIosArrowForward />
-        </SwiperControl>
-        <SwiperControl aria-label="previous image" id="prev">
-          <IoIosArrowBack />
-        </SwiperControl>
-      </Swiper>
+      <SlideUpElement offsetY="20%" offsetX="100%">
+        <Swiper {...swiperProps} className="!w-[60%] py-20 mx-auto !relative">
+          {threeSlides.map(({ title, text, img }) => (
+            <SwiperSlide key={title}>
+              <Slide {...{ title, text, img }} />
+            </SwiperSlide>
+          ))}
+          <SwiperControl className="right-0" aria-label="next image" id="next">
+            <IoIosArrowForward />
+          </SwiperControl>
+          <SwiperControl aria-label="previous image" id="prev">
+            <IoIosArrowBack />
+          </SwiperControl>
+        </Swiper>
+      </SlideUpElement>
     </div>
   );
 };
 
 const Slide = ({ title, text, img }) => {
   return (
-    <div className="rounded-2xl overflow-hidden w-full h-full hover:[&_img]:scale-110">
-      <div className="absolute z-10 bg-lime rounded-br-2xl rounded-tl-2xl">
-        <div className="relative flex items-center p-4 px-16 font-medium gap-x-10">
-          <h1 className="text-4xl">{title}</h1>
-          <p>{text}</p>
-          <CurveImg curveColor="lime" tr bl />
+    <Link to="projects">
+      <div className="rounded-2xl overflow-hidden w-full h-full hover:[&_img]:scale-110">
+        <div className="absolute z-10 bg-lime rounded-br-2xl rounded-tl-2xl">
+          <div className="relative flex items-center p-4 px-16 font-medium gap-x-10">
+            <h1 className="text-4xl">{title}</h1>
+            <p>{text}</p>
+            <CurveImg curveColor="lime" tr bl />
+          </div>
         </div>
+        <img src={img} className="w-full h-full" alt={img} />
       </div>
-      <img src={img} className="w-full h-full" alt={img} />
-    </div>
+    </Link>
   );
 };
 
@@ -95,8 +97,8 @@ rounded-full
 
 const ProjectsTitle = tw.div`
 bg-gradient-to-b 
-to-[#000000da] 
-from-transparent 
+to-[#000000e1] 
+from-[#0000004f]
 h-full 
 w-full 
 absolute 
@@ -106,6 +108,7 @@ gap-y-4
 items-center
 justify-end
 text-white 
+z-10
 `;
 
 // zoom on imge on scroll

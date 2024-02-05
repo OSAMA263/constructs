@@ -8,7 +8,12 @@ import { CiFacebook, CiInstagram, CiYoutube } from "react-icons/ci";
 
 export default function Team() {
   return (
-    <PageWrapper bg="bg-black">
+    <PageWrapper
+      bg="bg-black"
+      title="Constructs - the team"
+      description="our blogs Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quaerat ipsa amet fuga ullam saepe?"
+      href="/team"
+    >
       <LayoutSection id="team" styles="w-[60%] py-28">
         <SectionTitle
           h1="meet our"

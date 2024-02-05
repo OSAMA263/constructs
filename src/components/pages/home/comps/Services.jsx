@@ -1,12 +1,13 @@
 import tw from "tailwind-styled-components";
 import CurveImg from "./CurveImg";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { GoPlus } from "react-icons/go";
 import { motion } from "framer-motion";
 import ArrowButton from "./ArrowButton";
 import LayoutSection from "../../../shared/LayoutSection";
 import { servicesGrid } from "../data";
 import SectionTitle from "../../../shared/SectionTitle";
+import SlideUpElement from "../../../shared/SlideUpElement";
 
 export default function Services() {
   return (
@@ -33,57 +34,61 @@ export default function Services() {
 }
 
 const GridColumn = ({ flexDir, data, i }) => {
-  const { title, bigImg, smallImg, card, bigText } = data;
+  const { title, bigImg, smallImg, card, bigText, url } = data;
 
   return (
     <div className={flexDir + ` flex h-[80vh] overflow-y-hidden gap-x-8`}>
       {/* left content */}
-      <NavLink className="w-full h-full">
-        <LeftContentWrapper animate="animate" whileHover="whileHover">
-          <div className="flex-between gap-x-10">
-            <h1>{title}</h1>
-            <div className="lime-line"></div>
-            <h3 className="px-6 py-2 tracking-widest rounded-lg text-darkGray bg-lime">
-              LEARN MORE
-            </h3>
-          </div>
-          {/* img */}
-          <div className="relative h-full">
-            <img
-              src={bigImg}
-              alt={bigImg}
-              className="absolute object-cover w-full h-full rounded-2xl"
-            />
-            <div className="absolute">
-              <h2 className="relative p-4 text-5xl bg-black text-outline rounded-br-2xl w-fit">
-                0{i + 1} Service <CurveImg tr bl curveColor="black" />
-              </h2>
+      <SlideUpElement offsetY="50%" styles="h-full w-full">
+        <Link to={url}>
+          <LeftContentWrapper animate="animate" whileHover="whileHover">
+            <div className="flex-between gap-x-10">
+              <h1>{title}</h1>
+              <div className="lime-line"></div>
+              <h3 className="px-6 py-2 tracking-widest rounded-lg text-darkGray bg-lime">
+                LEARN MORE
+              </h3>
             </div>
-          </div>
-          <ArrowButton />
-        </LeftContentWrapper>
-      </NavLink>
+            {/* img */}
+            <div className="relative h-full">
+              <img
+                src={bigImg}
+                alt={bigImg}
+                className="absolute object-cover w-full h-full rounded-2xl"
+              />
+              <div className="absolute">
+                <h2 className="relative p-4 text-5xl bg-black text-outline rounded-br-2xl w-fit">
+                  0{i + 1} Service <CurveImg tr bl curveColor="black" />
+                </h2>
+              </div>
+            </div>
+            <ArrowButton />
+          </LeftContentWrapper>
+        </Link>
+      </SlideUpElement>
       {/* right content */}
-      <NavLink className="w-[45%] h-full">
-        <RightContentWrapper>
-          <div className="h-full overflow-hidden">
-            <img
-              src={smallImg}
-              alt={smallImg}
-              className="object-cover w-full h-full"
-            />
-          </div>
-          <Card>
-            <HouseIcon>{card.icon}</HouseIcon>
-            <h1 className="text-3xl font-bold">{card.title}</h1>
-            <p className="font-medium ">{card.text} </p>
-            <button className="text-3xl lime-button">
-              <GoPlus />
-            </button>
-          </Card>
-          <p className="text-3xl leading-normal text-white">{bigText}</p>
-        </RightContentWrapper>
-      </NavLink>
+      <SlideUpElement ind={2} offsetY="50%" styles="h-full w-[45%]">
+        <Link to={url}>
+          <RightContentWrapper>
+            <div className="h-full overflow-hidden">
+              <img
+                src={smallImg}
+                alt={smallImg}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <Card>
+              <HouseIcon>{card.icon}</HouseIcon>
+              <h1 className="text-3xl font-bold">{card.title}</h1>
+              <p className="font-medium ">{card.text} </p>
+              <button className="text-3xl lime-button">
+                <GoPlus />
+              </button>
+            </Card>
+            <p className="text-3xl leading-normal text-white">{bigText}</p>
+          </RightContentWrapper>
+        </Link>
+      </SlideUpElement>
     </div>
   );
 };
@@ -108,6 +113,7 @@ grid-rows-4
 gap-y-8 
 [&>div]:rounded-2xl
 [&_button]:hover:text-white
+text-white
 `;
 
 const Card = tw.div`

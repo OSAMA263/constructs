@@ -2,10 +2,11 @@ import LayoutSection from "../../../shared/LayoutSection";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Pagination } from "swiper/modules";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import SectionTitle from "../../../shared/SectionTitle";
 import LimeButtonArrow from "../../../shared/LimeButtonArrow";
 import { THE_TEAM_DATA } from "../../team/data";
+import SlideUpElement from "../../../shared/SlideUpElement";
 
 export default function TheTeam() {
   return (
@@ -20,7 +21,7 @@ export default function TheTeam() {
 
       <div className="flex justify-center mt-10">
         <LimeButtonArrow text="view all">
-          <Link to="team"></Link>
+          <NavLink to="/team"></NavLink>
         </LimeButtonArrow>
       </div>
     </LayoutSection>
@@ -40,10 +41,11 @@ const TeamSwiper = () => {
     modules: [Pagination],
   };
   return (
+    <SlideUpElement offsetY="20%" offsetX="100%">
     <Swiper {...swiperProps}>
       {THE_TEAM_DATA.map(({ img, name, role, des }) => (
         <SwiperSlide key={name}>
-          <Link className="flex overflow-hidden rounded-2xl">
+          <div className="flex overflow-hidden cursor-pointer rounded-2xl">
             <img src={img} className="w-56" alt="" />
             <div className="flex flex-col justify-center p-8 font-medium text-center bg-darkGray gap-y-4 text-lightGray">
               <div className="uppercase">
@@ -52,13 +54,13 @@ const TeamSwiper = () => {
               </div>
               <p>{des}</p>
             </div>
-          </Link>
+          </div>
         </SwiperSlide>
       ))}
       <div
         className="absolute bottom-0 z-10 flex -translate-x-1/2 left-1/2 gap-x-4"
         id="custom-pagination"
       ></div>
-    </Swiper>
+    </Swiper></SlideUpElement>
   );
 };

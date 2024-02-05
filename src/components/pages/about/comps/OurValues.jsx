@@ -4,6 +4,7 @@ import { FaLocationArrow } from "react-icons/fa";
 import { RiArrowLeftDoubleLine } from "react-icons/ri";
 import { BsBuildingGear, BsBuildings } from "react-icons/bs";
 import SectionTitle from "../../../shared/SectionTitle";
+import SlideUpElement from "../../../shared/SlideUpElement";
 
 export default function OurValues() {
   return (
@@ -17,26 +18,34 @@ export default function OurValues() {
         />
         {/* FOUR CARD GRID OUR VALUES */}
         <Grid>
-          <GridCard
-            title="Hardwork"
-            icon={<FaLocationArrow />}
-            styles="bg-white text-black [&_p]:!text-gray-500"
-          />
-          <GridCard
-            title="Innovation"
-            icon={<RiArrowLeftDoubleLine />}
-            styles="bg-white text-black [&_p]:!text-gray-500"
-          />
-          <GridCard
-            title="Quality"
-            icon={<BsBuildingGear />}
-            styles="bg-darkGray text-white [&_span]:!text-lime"
-          />
-          <GridCard
-            title="Service"
-            icon={<BsBuildings />}
-            styles="bg-black text-white [&_span]:!text-lime"
-          />
+          <SlideUpElement ind={1} offsetY="69%">
+            <GridCard
+              title="Hardwork"
+              icon={<FaLocationArrow />}
+              styles="bg-white text-black [&_p]:!text-gray-500"
+            />
+          </SlideUpElement>
+          <SlideUpElement ind={2} offsetY="69%">
+            <GridCard
+              title="Innovation"
+              icon={<RiArrowLeftDoubleLine />}
+              styles="bg-white text-black [&_p]:!text-gray-500"
+            />
+          </SlideUpElement>
+          <SlideUpElement ind={3} offsetY="69%">
+            <GridCard
+              title="Quality"
+              icon={<BsBuildingGear />}
+              styles="bg-darkGray text-white [&_span]:!text-lime"
+            />
+          </SlideUpElement>
+          <SlideUpElement ind={4} offsetY="69%">
+            <GridCard
+              title="Service"
+              icon={<BsBuildings />}
+              styles="bg-black text-white [&_span]:!text-lime"
+            />
+          </SlideUpElement>
         </Grid>
       </div>
     </LayoutSection>

@@ -6,15 +6,20 @@ export default function PageWrapper(props) {
   const { children, title, description, href, bg } = props;
 
   return (
-      <motion.main className={bg + " overflow-x-hidden relative"}>
-        <Helmet>
-          {/* <title>{title}</title>
+    <motion.main
+      initial={{ opacity: 1, delay: 1 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className={bg + " relative"}
+    >
+      <Helmet>
+        <title>{title}</title>
         <meta name="description" content={description} />
-        <link rel="canonical" href={href} /> */}
-        </Helmet>
-        {/* <SlidingDivs /> */}
-        {children}
-      </motion.main>
+        <link rel="canonical" href={href} />
+      </Helmet>
+      {/* <SlidingDivs /> */}
+      {children}
+    </motion.main>
   );
 }
 
@@ -29,7 +34,7 @@ const SlidingDivs = () => {
 
   const fadeOutWhiteDiv = {
     initial: { opacity: 1 },
-    animate: { opacity: 0, transition: { duration: 0.2, delay: 0.9 } },
+    animate: { opacity: 0, transition: { duration: 0.2, delay: 0.7 } },
   };
 
   const slideAnimation = {

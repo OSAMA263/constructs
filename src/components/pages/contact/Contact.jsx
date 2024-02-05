@@ -7,10 +7,16 @@ import {
   AccordionItem,
   AccordionPanel,
 } from "@chakra-ui/accordion";
+import SlideUpElement from "../../shared/SlideUpElement";
 
 export default function Contact() {
   return (
-    <PageWrapper bg="bg-gray-200">
+    <PageWrapper
+      bg="bg-gray-200"
+      title="Constructs - Contact Us"
+      description="coontact us and shit, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quaerat ipsa amet fuga ullam saepe?"
+      href="/contact"
+    >
       <div className="bg-gray-200">
         <LayoutSection id="form" styles="w-[35%] py-20">
           <ContactForm title="Contact Us" />
@@ -23,7 +29,7 @@ export default function Contact() {
 
 export const ContactForm = ({ title }) => {
   return (
-    <>
+    <SlideUpElement offsetY="45%">
       <div className="flex flex-col items-center py-4 text-center gap-y-6">
         <h6 className="font-medium tracking-widest uppercase text-darkGray">
           get in touch
@@ -70,7 +76,7 @@ export const ContactForm = ({ title }) => {
           Submit
         </button>
       </Form>
-    </>
+    </SlideUpElement>
   );
 };
 
@@ -92,52 +98,56 @@ gap-y-4
 const FAQ = () => {
   return (
     <section id="FAQ">
-      <div className="flex flex-col items-center pb-10 font-medium text-center gap-y-8 pt-28">
-        <h6 className="tracking-widest uppercase text-darkGray">
-          ask the construct team
-        </h6>
-        <h1 className="text-5xl font-semibold">Frequently Asked Questions</h1>
-        <p className="max-w-[480px] text-center text-darkGray text-balance">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum iure
-          consectetur nesciunt.
-        </p>
-      </div>
+      <SlideUpElement offsetY="69%">
+        <div className="flex flex-col items-center pb-10 font-medium text-center gap-y-8 pt-28">
+          <h6 className="tracking-widest uppercase text-darkGray">
+            ask the construct team
+          </h6>
+          <h1 className="text-5xl font-semibold">Frequently Asked Questions</h1>
+          <p className="max-w-[480px] text-center text-darkGray text-balance">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum iure
+            consectetur nesciunt.
+          </p>
+        </div>
+      </SlideUpElement>
       {/* ACCORDIONS------ */}
       <Accordion allowMultiple>
         {FAQ_DATA.map(({ Q }, i) => (
-          <AccordionItem className="!overflow-hidden !rounded-3xl mb-8" key={i}>
-            {({ isExpanded }) => (
-              <>
-                <AccordionButton
-                  bg="white"
-                  _expanded={{ bg: "#3b3e43", color: "white" }}
-                  _hover={{ bg: "#54575b", color: "white" }}
-                  className="[&_#plus>span]:hover:!bg-white !flex !flex-col !items-start [&_.chakra-collapse]:!w-full"
-                >
-                  <div className="w-full p-10 flex-between text-start">
-                    <h1 className="text-2xl font-medium">{Q}</h1>
-                    {/* PLUS SIGN */}
-                    <div id="plus" className="relative w-4">
-                      <PlusSpan
-                        className={isExpanded ? "!bg-white" : ""}
-                      ></PlusSpan>
-                      <PlusSpan
-                        className={
-                          isExpanded ? "!bg-white rotate-0" : "rotate-90"
-                        }
-                      ></PlusSpan>
+          <SlideUpElement offsetY="20%" key={i} ind={i}>
+            <AccordionItem className="!overflow-hidden !rounded-3xl mb-8">
+              {({ isExpanded }) => (
+                <>
+                  <AccordionButton
+                    bg="white"
+                    _expanded={{ bg: "#3b3e43", color: "white" }}
+                    _hover={{ bg: "#54575b", color: "white" }}
+                    className="[&_#plus>span]:hover:!bg-white !flex !flex-col !items-start [&_.chakra-collapse]:!w-full"
+                  >
+                    <div className="w-full p-10 flex-between text-start">
+                      <h1 className="text-2xl font-medium">{Q}</h1>
+                      {/* PLUS SIGN */}
+                      <div id="plus" className="relative w-4">
+                        <PlusSpan
+                          className={isExpanded ? "!bg-white" : ""}
+                        ></PlusSpan>
+                        <PlusSpan
+                          className={
+                            isExpanded ? "!bg-white rotate-0" : "rotate-90"
+                          }
+                        ></PlusSpan>
+                      </div>
                     </div>
-                  </div>
-                  <AccordionPanel className="p-10 text-lg !text-start !bg-darkGray !text-lightGray">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Obcaecati reprehenderit eligendi repellat iure, asperiores
-                    deserunt blanditiis ut explicabo non odit, quisquam ipsum
-                    eaque.
-                  </AccordionPanel>
-                </AccordionButton>
-              </>
-            )}
-          </AccordionItem>
+                    <AccordionPanel className="p-10 text-lg !text-start !bg-darkGray !text-lightGray">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Obcaecati reprehenderit eligendi repellat iure, asperiores
+                      deserunt blanditiis ut explicabo non odit, quisquam ipsum
+                      eaque.
+                    </AccordionPanel>
+                  </AccordionButton>
+                </>
+              )}
+            </AccordionItem>
+          </SlideUpElement>
         ))}
       </Accordion>
     </section>

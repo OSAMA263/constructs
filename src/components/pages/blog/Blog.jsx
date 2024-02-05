@@ -4,16 +4,22 @@ import LayoutSection from "../../shared/LayoutSection";
 import { DATA_BLOGS } from "./data";
 import { GoPlus } from "react-icons/go";
 import PageWrapper from "../../PageWrapper";
+import SlideUpElement from "../../shared/SlideUpElement";
 
 export default function Blog() {
   return (
-    <PageWrapper bg="bg-gray-200">
+    <PageWrapper
+      bg="bg-gray-200"
+      title="Constructs - Blogs"
+      description="our blogs Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quaerat ipsa amet fuga ullam saepe?"
+      href="/blogs"
+    >
       <BlogsGrid />
     </PageWrapper>
   );
 }
 
-export const BlogsGrid = () => {
+export const BlogsGrid = ({ homeUrl }) => {
   return (
     <div className="bg-gray-200">
       <LayoutSection id="blogs" styles="py-28 w-[60%]">
@@ -24,8 +30,10 @@ export const BlogsGrid = () => {
           styles="border-black flex-between"
         />
         <div className="grid grid-cols-3 gap-x-4">
-          {DATA_BLOGS.map(({ bg, details, text }) => (
-            <Card {...{ bg, details, text }} key={bg} />
+          {DATA_BLOGS.map(({ bg, details, text }, i) => (
+            <SlideUpElement key={text} offsetY="40%" ind={i + 1}>
+              <Card {...{ bg, details, text, homeUrl }} />
+            </SlideUpElement>
           ))}
         </div>
       </LayoutSection>
@@ -33,10 +41,14 @@ export const BlogsGrid = () => {
   );
 };
 
-const Card = ({ bg, details, text }) => {
+const Card = ({ bg, details, text, homeUrl }) => {
   const { avatar, name, role, date } = details;
+
   return (
-    <Link className="relative space-y-4 font-medium text-darkGray">
+    <Link
+      to={homeUrl ?? ""}
+      className="relative space-y-4 font-medium text-darkGray"
+    >
       <img src={bg} className="rounded-2xl" alt={bg} />
       {/* avatar details */}
       <div className="text-sm flex-between">

@@ -6,20 +6,27 @@ import LimeButtonArrow from "../../shared/LimeButtonArrow";
 import { Link } from "react-scroll";
 import GetStarted from "../../shared/GetStarted";
 import PageWrapper from "../../PageWrapper";
+import SlideUpElement from "../../shared/SlideUpElement";
+import ZoomInImage from "../../shared/ZoomInImage";
 
 export default function About() {
   return (
-    <PageWrapper bg="bg-gray-100">
+    <PageWrapper
+      title="Constructs - About Us"
+      description="our blogs Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quaerat ipsa amet fuga ullam saepe?"
+      href="/about"
+      bg="bg-gray-100"
+    >
       <LayoutSection styles="py-44 w-[60%]">
-        <Hero />
-        {/* zoom in image */}
-        <div className="py-10">
-          <img
-            src="swiper1.jpg"
-            alt=""
-            className="rounded-2xl max-h-[600px] w-full"
-          />
-        </div>
+        <SlideUpElement offsetY="40%">
+          <Hero />
+          {/* zoom in image */}
+          <div className="py-10">
+            <div className="rounded-2xl overflow-hidden">
+              <ZoomInImage src="swiper1.jpg" />
+            </div>
+          </div>
+        </SlideUpElement>
       </LayoutSection>
       <OurStory />
       <TheTeam />

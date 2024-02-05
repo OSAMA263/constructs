@@ -6,9 +6,10 @@ export default function Fallback() {
       <motion.span
         initial={{ opacity: 1 }}
         animate={{ opacity: [0, 1, 0] }}
+        exit={{ offsetPosition: 4 }}
         transition={{ duration: 1, repeat: Infinity }}
       >
-        fallback
+        <img src="logo-white.svg" className="w-60" alt="logo" />
       </motion.span>
     </div>
   );
