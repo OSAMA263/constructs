@@ -1,14 +1,21 @@
-import React from "react";
 import tw from "tailwind-styled-components";
 
-const LayoutSection = (props) => {
+export default function LayoutSection(props) {
   const { id, children, styles } = props;
-
   return (
-    <section className={styles + " mx-auto"} id={id}>
+    <Section className={styles} id={id}>
       {children}
-    </section>
+    </Section>
   );
-};
+}
 
-export default LayoutSection;
+const Section = tw.section`
+mx-auto 
+xl:w-[65%] 
+lg:w-[75%] 
+md:w:[80%]
+w-[90%]
+lg:py-28
+pb-20
+pt-28
+`;

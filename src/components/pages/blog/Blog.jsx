@@ -22,14 +22,14 @@ export default function Blog() {
 export const BlogsGrid = ({ homeUrl }) => {
   return (
     <div className="bg-gray-200">
-      <LayoutSection id="blogs" styles="py-28 w-[60%]">
+      <LayoutSection id="blogs">
         <SectionTitle
           h1="our"
           h2="blog"
           par="our recent articles"
           styles="border-black flex-between"
         />
-        <div className="grid grid-cols-3 gap-x-4">
+        <div className="grid lg-mobile:grid-cols-3 lg-mobile:gap-4 gap-y-10">
           {DATA_BLOGS.map(({ bg, details, text }, i) => (
             <SlideUpElement key={text} offsetY="40%" ind={i + 1}>
               <Card {...{ bg, details, text, homeUrl }} />
@@ -47,11 +47,11 @@ const Card = ({ bg, details, text, homeUrl }) => {
   return (
     <Link
       to={homeUrl ?? ""}
-      className="relative space-y-4 font-medium text-darkGray"
+      className="relative space-y-4 font-medium lg-mobile:w-full w-1/2 mx-auto block text-darkGray"
     >
       <img src={bg} className="rounded-2xl" alt={bg} />
       {/* avatar details */}
-      <div className="text-sm flex-between">
+      <div className="lg:text-sm text-xs flex-between">
         <div className="flex items-center gap-x-4">
           <img className="w-16 rounded-full" src={avatar} alt={avatar} />
           <div className="flex flex-col items-center gap-y-2">
@@ -66,8 +66,8 @@ const Card = ({ bg, details, text, homeUrl }) => {
         </div>
       </div>
       {/* large text */}
-      <h1 className="text-4xl font-semibold text-black">{text}</h1>
-      <button className="lime-button !bottom-[90%] text-2xl">
+      <h1 className="2xl:text-4xl lg:text-2xl font-semibold text-black">{text}</h1>
+      <button aria-label="pluse icon" className="lime-button !bottom-[90%] text-2xl">
         <GoPlus />
       </button>
     </Link>

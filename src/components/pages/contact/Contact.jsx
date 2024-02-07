@@ -18,7 +18,10 @@ export default function Contact() {
       href="/contact"
     >
       <div className="bg-gray-200">
-        <LayoutSection id="form" styles="w-[35%] py-20">
+        <LayoutSection
+          id="form"
+          styles="xl:w-[35%] lg:w-[40%] md:w-[50%] w-[60%]"
+        >
           <ContactForm title="Contact Us" />
           <FAQ />
         </LayoutSection>
@@ -31,10 +34,10 @@ export const ContactForm = ({ title }) => {
   return (
     <SlideUpElement offsetY="45%">
       <div className="flex flex-col items-center py-4 text-center gap-y-6">
-        <h6 className="font-medium tracking-widest uppercase text-darkGray">
+        <h6 className="font-medium tracking-widest uppercase sm:text-base text-sm text-darkGray">
           get in touch
         </h6>
-        <h1 className="text-5xl font-bold">{title}</h1>
+        <h1 className="md:text-5xl text-3xl font-bold">{title}</h1>
       </div>
       {/* FORM INPUST */}
       <Form>
@@ -103,8 +106,10 @@ const FAQ = () => {
           <h6 className="tracking-widest uppercase text-darkGray">
             ask the construct team
           </h6>
-          <h1 className="text-5xl font-semibold">Frequently Asked Questions</h1>
-          <p className="max-w-[480px] text-center text-darkGray text-balance">
+          <h1 className="lg-mobile:text-5xl text-3xl  font-semibold">
+            Frequently Asked Questions
+          </h1>
+          <p className="sm:max-w-[480px] text-center text-darkGray text-balance">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum iure
             consectetur nesciunt.
           </p>
@@ -123,8 +128,8 @@ const FAQ = () => {
                     _hover={{ bg: "#54575b", color: "white" }}
                     className="[&_#plus>span]:hover:!bg-white !flex !flex-col !items-start [&_.chakra-collapse]:!w-full"
                   >
-                    <div className="w-full p-10 flex-between text-start">
-                      <h1 className="text-2xl font-medium">{Q}</h1>
+                    <div className="w-full sm:p-10 p-4 flex-between gap-x-4 text-start">
+                      <h1 className="sm:text-2xl text-lg font-medium">{Q}</h1>
                       {/* PLUS SIGN */}
                       <div id="plus" className="relative w-4">
                         <PlusSpan
@@ -137,7 +142,7 @@ const FAQ = () => {
                         ></PlusSpan>
                       </div>
                     </div>
-                    <AccordionPanel className="p-10 text-lg !text-start !bg-darkGray !text-lightGray">
+                    <AccordionPanel className="sm:p-10 p-4 sm:text-lg text-sm !text-start !bg-darkGray !text-lightGray">
                       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                       Obcaecati reprehenderit eligendi repellat iure, asperiores
                       deserunt blanditiis ut explicabo non odit, quisquam ipsum
@@ -157,7 +162,6 @@ const FAQ = () => {
 const PlusSpan = tw.span`
 bg-darkGray 
 transition-all 
-
 absolute 
 h-[2px] 
 w-full

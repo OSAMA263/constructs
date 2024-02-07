@@ -8,13 +8,13 @@ import SlideUpElement from "../../../shared/SlideUpElement";
 
 export default function OurValues() {
   return (
-    <LayoutSection styles="bg-lime py-28">
-      <div className="w-[70%] mx-auto">
+    <div className="bg-lime rounded-t-[60px]">
+      <LayoutSection styles="2xl:w-[70%]">
         <SectionTitle
           h1="our"
           h2="values"
           par="what we belive"
-          styles="border-black flex flex-col text-center"
+          styles="border-black sm:text-center sm:flex-col"
         />
         {/* FOUR CARD GRID OUR VALUES */}
         <Grid>
@@ -47,16 +47,16 @@ export default function OurValues() {
             />
           </SlideUpElement>
         </Grid>
-      </div>
-    </LayoutSection>
+      </LayoutSection>
+    </div>
   );
 }
 
 const GridCard = ({ styles, icon, title }) => {
   return (
-    <div className={styles + " rounded-2xl p-10 py-16 flex flex-col gap-y-8"}>
+    <div className={styles + " rounded-2xl 2xl:p-14 p-6 flex flex-col gap-y-8"}>
       <span className="text-4xl">{icon}</span>
-      <h1 className="text-4xl font-semibold">{title}</h1>
+      <h1 className="2xl:text-4xl text-2xl font-semibold">{title}</h1>
       <p className="font-medium text-balance">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
       </p>
@@ -66,7 +66,8 @@ const GridCard = ({ styles, icon, title }) => {
 
 const Grid = tw.div`
 grid 
-grid-cols-4
-gap-x-8
+xl:grid-cols-4
+sm:grid-cols-2
+gap-8
 py-8
 `;

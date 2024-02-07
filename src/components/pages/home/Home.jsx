@@ -1,4 +1,3 @@
-import tw from "tailwind-styled-components";
 import CurveImg from "./comps/CurveImg";
 import Services from "./comps/Services";
 import SwiperOpacity from "./comps/SwiperOpacity";
@@ -7,6 +6,7 @@ import GetStarted from "../../shared/GetStarted";
 import PageWrapper from "../../PageWrapper";
 import { BlogsGrid } from "../blog/Blog";
 import SlideUpElement from "../../shared/SlideUpElement";
+import LayoutSection from "../../shared/LayoutSection";
 
 export default function Home() {
   return (
@@ -29,8 +29,8 @@ export default function Home() {
 
 export const GridFolders = () => {
   return (
-    <div className="p-28 bg-lime rounded-t-[60px]">
-      <ThreeFolders>
+    <div className="py-28 bg-lime rounded-t-[60px]">
+      <LayoutSection styles="grid md:grid-cols-3 md:gap-6 gap-12 !py-0">
         <SlideUpElement offsetY="70%" ind={1}>
           <Folder
             title="RESIDENTIAL"
@@ -55,7 +55,7 @@ export const GridFolders = () => {
             par="We are the right choose"
           />
         </SlideUpElement>
-      </ThreeFolders>
+      </LayoutSection>
     </div>
   );
 };
@@ -64,30 +64,26 @@ const Folder = (props) => {
   const { title, num, styles, par } = props;
 
   return (
-    <div className={"relative rounded-3xl " + styles}>
-      <div className="relative font-medium">
-        <h1 className="p-6 pe-28 relative w-fit bg-lime rounded-br-xl !text-black">
+    <div className={"relative rounded-3xl md:w-full w-1/2 mx-auto  " + styles}>
+      <div className="relative font-medium grid grid-cols-3">
+        <h1 className="lg:p-6 p-4 relative w-full bg-lime col-span-2 rounded-br-xl !text-black">
           {title}
           <CurveImg tr bl curveColor="lime" />
         </h1>
+        <div></div>
       </div>
-      <div className="flex flex-col items-center justify-center py-4 space-y-2">
-        <h1 className="font-bold text-8xl">{num}</h1>
-        <h2 className="text-4xl italic font-extralight">projects</h2>
+      <div className="flex flex-col px-16 items-center justify-center py-4 space-y-2">
+        <h1 className="font-bold xl:text-6xl 2xl:text-8xl text-4xl">{num}</h1>
+        <h2 className="xl:text-4xl text-2xl italic font-extralight">
+          projects
+        </h2>
         <span className="w-[10%] h-[1px] mx-auto !mt-4"></span>
-        <p className="text-lg">{par}</p>
+        <p className="xl:text-lg min-w-max">{par}</p>
       </div>
     </div>
   );
 };
 
-const ThreeFolders = tw.div`
-w-[70%] 
-mx-auto 
-grid 
-grid-cols-3 
-gap-x-6
-`;
 // const Folder = tw.div`
 // [&_h1]:w-fit
 // [&_h1]:pb-7

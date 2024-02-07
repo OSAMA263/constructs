@@ -10,7 +10,7 @@ import SlideUpElement from "../../../shared/SlideUpElement";
 
 export default function TheTeam() {
   return (
-    <LayoutSection styles="w-[60%] py-28">
+    <LayoutSection styles="2xl:w-[65%] xl:w-[80%]" id="our fokin team">
       <SectionTitle
         h1="the"
         h2="team"
@@ -31,36 +31,42 @@ export default function TheTeam() {
 const TeamSwiper = () => {
   const swiperProps = {
     spaceBetween: 60,
-    slidesPerView: 2,
+    slidesPerView: 1,
     pagination: {
       el: "#custom-pagination",
       clickable: true,
-      renderBullet: (index, className) =>
+      renderBullet: (i, className) =>
         `<button class="${className} p-2 bg-lightGray"></button>`,
     },
     modules: [Pagination],
+    breakpoints: {
+      1224: {
+        slidesPerView: 2,
+      },
+    },
   };
   return (
     <SlideUpElement offsetY="20%" offsetX="100%">
-    <Swiper {...swiperProps}>
-      {THE_TEAM_DATA.map(({ img, name, role, des }) => (
-        <SwiperSlide key={name}>
-          <div className="flex overflow-hidden cursor-pointer rounded-2xl">
-            <img src={img} className="w-56" alt="" />
-            <div className="flex flex-col justify-center p-8 font-medium text-center bg-darkGray gap-y-4 text-lightGray">
-              <div className="uppercase">
-                <h1>{name}</h1>
-                <span className="text-lime">{role}</span>
+      <Swiper {...swiperProps}>
+        {THE_TEAM_DATA.map(({ img, name, role, des }) => (
+          <SwiperSlide key={name}>
+            <div className="flex overflow-hidden cursor-pointer rounded-2xl">
+              <img src={img} className="w-56" alt={name} />
+              <div className="flex w-full flex-col justify-center p-8 font-medium text-center bg-darkGray gap-y-4 text-lightGray">
+                <div className="uppercase">
+                  <h1>{name}</h1>
+                  <span className="text-lime">{role}</span>
+                </div>
+                <p>{des}</p>
               </div>
-              <p>{des}</p>
             </div>
-          </div>
-        </SwiperSlide>
-      ))}
-      <div
-        className="absolute bottom-0 z-10 flex -translate-x-1/2 left-1/2 gap-x-4"
-        id="custom-pagination"
-      ></div>
-    </Swiper></SlideUpElement>
+          </SwiperSlide>
+        ))}
+        <div
+          className="absolute bottom-0 z-10 flex -translate-x-1/2 left-1/2 gap-x-4"
+          id="custom-pagination"
+        ></div>
+      </Swiper>
+    </SlideUpElement>
   );
 };

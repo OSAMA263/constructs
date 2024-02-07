@@ -4,6 +4,9 @@ export default {
   theme: {
     extend: {
       colors: { lime: "#bef66b", darkGray: "#292d32", lightGray: "#bdbebf" },
+      screens: {
+        "lg-mobile": "874px",
+      },
     },
   },
   plugins: [],

@@ -2,8 +2,6 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 
 export default function ZoomInImage({ src,offsetY=0.5 }) {
-  // ?section with w and padding with SEO
-
   const ref = useRef();
   const { scrollYProgress } = useScroll({
     target: ref,

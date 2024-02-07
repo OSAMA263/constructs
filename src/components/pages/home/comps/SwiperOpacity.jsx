@@ -22,7 +22,7 @@ export default function SwiperOpacity() {
     );
   };
   return (
-    <LayoutSection styles="w-[60%] py-28">
+    <LayoutSection id="swiper">
       <SlideUpElement offsetY="20%">
         <motion.div
           animate="animate"
@@ -33,11 +33,11 @@ export default function SwiperOpacity() {
             <AnimatePresence mode="popLayout">
               <motion.div key={activeImg} {...imagesVariants}>
                 <div className="flex-between gap-x-6">
-                  <h1 className="font-bold text-white text-7xl min-w-max">
+                  <h1 className="font-bold text-white xl:text-7xl sm:text-5xl text-3xl min-w-max">
                     Top Tier Builders
                   </h1>
-                  <div className="lime-line"></div>
-                  <span className="px-6 py-2 font-medium tracking-widest rounded-lg text-darkGray bg-lime">
+                  <div className="lime-line md:block hidden"></div>
+                  <span className="px-6 py-2 md:block hidden font-medium tracking-widest rounded-lg text-darkGray bg-lime">
                     RESIDENTIAL
                   </span>
                 </div>
@@ -48,7 +48,7 @@ export default function SwiperOpacity() {
                     className="absolute object-cover w-full h-full rounded-xl"
                   />
                   <div className="absolute">
-                    <h1>
+                    <h1 className="sm:pr-10 !pr-16">
                       <CurveImg tr curveColor="black" /> Construction
                     </h1>
                     <h1>
@@ -56,16 +56,16 @@ export default function SwiperOpacity() {
                     </h1>
                   </div>
                 </Folder>
-                <ArrowButton />
+                <ArrowButton url="about us" />
               </motion.div>
             </AnimatePresence>
           </NavLink>
           {/* swiper navigation controls */}
           <SwiperControlsWrapper>
-            <button onClick={handleNextImg}>
+            <button aria-label="next image button" onClick={handleNextImg}>
               <IoIosArrowForward />
             </button>
-            <button onClick={handlePrevImg}>
+            <button aria-label="previous image buttton" onClick={handlePrevImg}>
               <IoIosArrowBack />
             </button>
           </SwiperControlsWrapper>
@@ -82,25 +82,31 @@ gap-y-2
 absolute 
 top-1/2
 right-0
-translate-x-1/2
+sm:translate-x-1/2
 -translate-y-1/2
 text-black
-text-4xl
+sm:text-4xl
+text-xl
 z-10
 w-fit
 [&_button]:bg-lime
-[&_button]:p-9
+[&_button]:xl:p-9
+[&_button]:p-3
 [&_button:hover]:bg-[#82a84a]
 [&_button]:rounded-full
+
 `;
 
 const Folder = tw.div`
 [&_h1]:w-fit
-[&_h1]:pb-4
+[&_h1]:sm:pb-4
+[&_h1]:pb-5
 [&_h1]:pr-10
 [&_h1]:rounded-br-3xl
 [&_h1]:bg-black
-[&_h1]:text-7xl
+[&_h1]:xl:text-7xl
+[&_h1]:sm:text-4xl
+[&_h1]:text-2xl
 [&_h1]:relative
 relative
 mt-4

@@ -11,7 +11,7 @@ import SlideUpElement from "../../../shared/SlideUpElement";
 
 export default function Services() {
   return (
-    <LayoutSection styles="w-[60%] py-28">
+    <LayoutSection>
       <SectionTitle
         h1="Our"
         h2="Services"
@@ -19,7 +19,7 @@ export default function Services() {
         styles="flex-between border-lime [&_h1]:text-white [&_h2]:text-lime [&_h3]:text-lightGray [&_p]:text-lightGray"
       />
       {/* 3 ROWS GRID CARDS */}
-      <div className="space-y-32">
+      <div className="lg:space-y-32 space-y-20">
         {servicesGrid.map((row, i) => (
           <GridColumn
             i={i}
@@ -37,7 +37,7 @@ const GridColumn = ({ flexDir, data, i }) => {
   const { title, bigImg, smallImg, card, bigText, url } = data;
 
   return (
-    <div className={flexDir + ` flex h-[80vh] overflow-y-hidden gap-x-8`}>
+    <div className={flexDir + ` sm:flex h-[80vh] overflow-y-hidden gap-x-8`}>
       {/* left content */}
       <SlideUpElement offsetY="50%" styles="h-full w-full">
         <Link to={url}>
@@ -45,7 +45,7 @@ const GridColumn = ({ flexDir, data, i }) => {
             <div className="flex-between gap-x-10">
               <h1>{title}</h1>
               <div className="lime-line"></div>
-              <h3 className="px-6 py-2 tracking-widest rounded-lg text-darkGray bg-lime">
+              <h3 className="xl:px-6 xl:py-2 p-2 md:text-base text-xs tracking-widest rounded-lg text-darkGray bg-lime">
                 LEARN MORE
               </h3>
             </div>
@@ -57,17 +57,21 @@ const GridColumn = ({ flexDir, data, i }) => {
                 className="absolute object-cover w-full h-full rounded-2xl"
               />
               <div className="absolute">
-                <h2 className="relative p-4 text-5xl bg-black text-outline rounded-br-2xl w-fit">
+                <h2 className="relative p-4 xl:text-5xl text-3xl bg-black text-outline rounded-br-2xl w-fit">
                   0{i + 1} Service <CurveImg tr bl curveColor="black" />
                 </h2>
               </div>
             </div>
-            <ArrowButton />
+            <ArrowButton url={url} />
           </LeftContentWrapper>
         </Link>
       </SlideUpElement>
       {/* right content */}
-      <SlideUpElement ind={2} offsetY="50%" styles="h-full w-[45%]">
+      <SlideUpElement
+        ind={2}
+        offsetY="50%"
+        styles="h-full sm:block hidden w-[45%]"
+      >
         <Link to={url}>
           <RightContentWrapper>
             <div className="h-full overflow-hidden">
@@ -79,13 +83,18 @@ const GridColumn = ({ flexDir, data, i }) => {
             </div>
             <Card>
               <HouseIcon>{card.icon}</HouseIcon>
-              <h1 className="text-3xl font-bold">{card.title}</h1>
-              <p className="font-medium ">{card.text} </p>
-              <button className="text-3xl lime-button">
+              <h1 className="2xl:text-3xl text-2xl font-bold">{card.title}</h1>
+              <p className="font-medium xl:text-base text-sm">{card.text} </p>
+              <button
+                aria-label={"open " + url}
+                className="text-3xl lime-button"
+              >
                 <GoPlus />
               </button>
             </Card>
-            <p className="text-3xl leading-normal text-white">{bigText}</p>
+            <p className="xl:text-3xl leading-normal text-xl text-white">
+              {bigText}
+            </p>
           </RightContentWrapper>
         </Link>
       </SlideUpElement>
@@ -96,7 +105,8 @@ const GridColumn = ({ flexDir, data, i }) => {
 const LeftContentWrapper = tw(motion.div)`
 [&_h1]:text-white
 text-nowrap
-[&_h1]:text-5xl
+[&_h1]:xl:text-5xl
+[&_h1]:text-4xl
 font-semibold
 w-full
 h-full
@@ -120,7 +130,9 @@ const Card = tw.div`
 p-6 
 flex
 flex-col 
-gap-y-4
+xl:gap-y-4
+
+gap-y-2
 bg-darkGray
 row-span-2
 relative
@@ -130,9 +142,12 @@ text-balance
 const HouseIcon = tw.span`
 w-fit 
 rounded-xl 
-text-5xl 
+xl:text-4xl
+2xl:text-5xl
+xl:p-10
+p-6
+text-3xl 
 text-lime 
 shadow-[4px_4px_20px_0.5px_#bef66b7e]
 bg-black
-p-10
 `;

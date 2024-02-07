@@ -5,11 +5,11 @@ import SlideUpElement from "./shared/SlideUpElement";
 
 export default function Footer() {
   return (
-    <div className="pb-10 text-white bg-black pt-28">
-      <LayoutSection styles="w-[60%]">
+    <div className=" text-white bg-black">
+      <LayoutSection styles="!pb-8">
         <SlideUpElement offsetY="20%">
           <Container>
-            <Link to="/" className="w-fit h-fit" aria-label="home page">
+            <Link to="/" className="w-fit h-fit sm:block hidden" aria-label="home page">
               <img src="logo-white.svg" className="w-52" alt="log" />
             </Link>
             {LINKS_DATA.map((column, i) => (
@@ -36,7 +36,7 @@ export default function Footer() {
         </SlideUpElement>
         {/* LARGE LOGO WITH CONTACT SOCIALMEDIA */}
         <SlideUpElement offsetY="20%">
-          <div className="flex flex-col items-center pb-10 mt-20 border-b gap-y-10">
+          <div className="flex flex-col items-center pb-10 mt-14 border-b gap-y-10">
             <img src="logo-white.svg" className="w-[60%]" alt="logo" />
             <div className="space-x-6 [&_a:hover]:text-lime">
               <a
@@ -73,7 +73,8 @@ export default function Footer() {
 
 const Container = tw.footer`
 grid 
-grid-cols-3
+sm:grid-cols-3
+grid-cols-2
 text-white
 `;
 

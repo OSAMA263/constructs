@@ -77,7 +77,7 @@ body {
   }
   .text-outline {
     -webkit-text-stroke-color: rgb(255, 255, 255) !important;
-    -webkit-text-stroke-width: 1px !important;
+    -webkit-text-stroke-width: .5px !important;
     color: transparent !important;
   }
 }
@@ -85,6 +85,11 @@ body {
 @media (min-width: 768px) {
   i {
     font-size: 24px;
+  }
+  .text-outline {
+    -webkit-text-stroke-color: rgb(255, 255, 255) !important;
+    -webkit-text-stroke-width: 1px !important;
+    color: transparent !important;
   }
 }
 .swiper-pagination-bullet-active {

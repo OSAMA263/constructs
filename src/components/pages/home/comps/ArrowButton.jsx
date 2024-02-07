@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { IoArrowForward } from "react-icons/io5";
 
-export default function ArrowButton() {
+export default function ArrowButton({ url="link" }) {
   return (
-    <button className="lime-button overflow-hidden">
+    <button
+      aria-label={"go to " + url}
+      className="lime-button overflow-hidden"
+    >
       <motion.div variants={arrowAnimation}>
         <div className="p-2 -rotate-45 text-2xl">
           <IoArrowForward />

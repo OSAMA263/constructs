@@ -14,14 +14,14 @@ export default function Team() {
       description="our blogs Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quaerat ipsa amet fuga ullam saepe?"
       href="/team"
     >
-      <LayoutSection id="team" styles="w-[60%] py-28">
+      <LayoutSection id="team" styles="">
         <SectionTitle
           h1="meet our"
           h2="team"
           par="integrity"
           styles="[&_h1]:text-white [&_h2]:text-lime flex-between [&_p]:text-lightGray [&_h3]:text-lightGray border-lime"
         />
-        <div className="grid grid-cols-3 gap-x-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {THE_TEAM_DATA.map(({ img, name, role, des }) => (
             <Card key={name}>
               <div className="[&>img]:hover:scale-110 rounded-2xl overflow-hidden">
