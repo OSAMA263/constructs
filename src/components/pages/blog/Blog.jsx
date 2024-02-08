@@ -12,7 +12,7 @@ export default function Blog() {
       bg="bg-gray-200"
       title="Constructs - Blogs"
       description="our blogs Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quaerat ipsa amet fuga ullam saepe?"
-      href="/blogs"
+      href="https://osama263.github.io/constructs/blogs"
     >
       <BlogsGrid />
     </PageWrapper>

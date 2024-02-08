@@ -11,7 +11,7 @@ export default function Services() {
       <PageWrapper
         title="Constructs - Services"
         description="our blogs Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quaerat ipsa amet fuga ullam saepe?"
-        href="/services"
+        href="https://osama263.github.io/constructs/services"
         bg="bg-gray-200"
       >
         <LayoutSection styles="2xl:w-[60%]">

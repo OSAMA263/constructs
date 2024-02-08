@@ -13,7 +13,7 @@ export default function Home() {
     <PageWrapper
       title="Constructs"
       description="rendom shit pla pla get Loremed ipsum dolor sit amet consectetur, adipisicing elit. Laborum quo fugit adipisci assumenda nesciunt dignissimos."
-      href="/"
+      href="https://osama263.github.io/constructs/"
       bg="bg-black"
     >
       <SwiperOpacity />

@@ -15,7 +15,7 @@ export default function About() {
     <PageWrapper
       title="Constructs - About Us"
       description="our blogs Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quaerat ipsa amet fuga ullam saepe?"
-      href="/about"
+      href="https://osama263.github.io/constructs/about"
       bg="bg-gray-100"
     >
       <LayoutSection id="about us" styles="!-44">
