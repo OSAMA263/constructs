@@ -24,7 +24,7 @@ export default function AllProjects() {
             />
           </ProjectsTitle>
           {/* zomom in img */}
-          <ZoomInImage src="swiper1.jpg" />
+          <ZoomInImage src="swiper1.webp" />
         </div>
         <SwiperFolders />
       </div>

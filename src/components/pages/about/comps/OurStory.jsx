@@ -37,7 +37,7 @@ const WhoWeAre = () => {
               </SlideUpElement>
             </div>
             <div className="rounded-2xl overflow-hidden">
-              <ZoomInImage src="swiper2.jpg" offsetY="1" />
+              <ZoomInImage src="swiper2.webp" offsetY="1" />
             </div>
           </Article>
         </div>

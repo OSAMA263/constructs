@@ -6,7 +6,7 @@ export default function Renovation() {
       smallTitle="UPGRADE"
       largeTitle="Renovation"
       par="We specialize in breathing new life into existing spaces."
-      background="services/big-img3.jpg"
+      background="services/big-img3.webp"
       title="Services - Renovation"
       description="our blogs Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quaerat ipsa amet fuga ullam saepe?"
       href="/services/renovation"

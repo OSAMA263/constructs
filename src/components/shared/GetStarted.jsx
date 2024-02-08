@@ -11,7 +11,7 @@ export default function GetStarted({ overlayBgc }) {
       <SlideUpElement offset="35%">
         <div className="absolute xl:w-[50%] lg:w-[60%] w-[90%] tracking-wide -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ">
           <img
-            src="get-in-touch.jpg"
+            src="get-in-touch.webp"
             alt="contact bg"
             className="rounded-2xl w-full h-full"
           />

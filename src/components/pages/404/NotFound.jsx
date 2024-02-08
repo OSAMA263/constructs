@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className="h-screen relative text-white flex flex-col gap-y-10 items-center justify-center">
       <div className="absolute -z-10 h-full w-full brightness-[.4]">
         <img
-          src="swiper1.jpg"
+          src="swiper1.webp"
           className="w-full h-full object-cover"
           alt="bg"
         />

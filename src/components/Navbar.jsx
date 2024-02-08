@@ -122,11 +122,15 @@ const MobileNavList = ({ isOpen, setIsOpen }) => {
 const ToggleIcon = ({ isOpen, linkColor }) => {
   return (
     <div className="flex w-10 flex-col gap-y-2 items-end">
-      <ToggleLine $isOpen={isOpen} $linkColor={linkColor}></ToggleLine>
       <ToggleLine
         $isOpen={isOpen}
         $linkColor={linkColor}
-        className={isOpen ? "w-1/2" : "w-full"}
+        className={isOpen ? "w-[60%]" : "w-full"}
+      ></ToggleLine>
+      <ToggleLine
+        $isOpen={isOpen}
+        className={isOpen ? "w-[40%]" : "w-full"}
+        $linkColor={linkColor}
       ></ToggleLine>
       <ToggleLine $isOpen={isOpen} $linkColor={linkColor}></ToggleLine>
     </div>
@@ -135,9 +139,9 @@ const ToggleIcon = ({ isOpen, linkColor }) => {
 
 const ToggleLine = tw.span`
 ${({ $isOpen, $linkColor }) =>
-  $isOpen || $linkColor === "white" ? "bg-white" : "bg-black"}
-w-full 
-h-1 
+  $linkColor === "white" || $isOpen ? "bg-white" : "bg-black"}
+w-full
+h-1
 rounded-xl
 transition-all
 duration-700

@@ -1,8 +1,8 @@
 const DATA_BLOGS = [
   {
-    bg: "blog/article1.jpg",
+    bg: "blog/article1.webp",
     details: {
-      avatar: "team/Steve Davis.jpg",
+      avatar: "team/Steve Davis.webp",
       name: "STEVE DAVIS",
       role: "ENVIRONMENT",
       date: "DEC 8, 2023",
@@ -10,9 +10,9 @@ const DATA_BLOGS = [
     text: "Sustainable Building Practices",
   },
   {
-    bg: "blog/article2.jpg",
+    bg: "blog/article2.webp",
     details: {
-      avatar: "team/Jane Doe.jpg",
+      avatar: "team/Jane Doe.webp",
       name: "JOHN SMITH",
       role: "RESERCH",
       date: "DEC 8, 2023",
@@ -20,9 +20,9 @@ const DATA_BLOGS = [
     text: "Choosing the Right Contractor",
   },
   {
-    bg: "blog/article3.jpg",
+    bg: "blog/article3.webp",
     details: {
-      avatar: "team/John Smith.jpg",
+      avatar: "team/John Smith.webp",
       name: "JANE DOE",
       role: "SAFETY",
       date: "DEC 8, 2023",

@@ -17,7 +17,7 @@ export default function PageWrapper(props) {
         <meta name="description" content={description} />
         <link rel="canonical" href={href} />
       </Helmet>
-      {/* <SlidingDivs /> */}
+      <SlidingDivs />
       {children}
     </motion.main>
   );

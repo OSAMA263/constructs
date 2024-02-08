@@ -24,7 +24,7 @@ export default function About() {
           {/* zoom in image */}
           <div className="pt-10">
             <div className="rounded-2xl overflow-hidden">
-              <ZoomInImage src="swiper1.jpg" />
+              <ZoomInImage src="swiper1.webp" />
             </div>
           </div>
         </SlideUpElement>
@@ -50,17 +50,17 @@ const Hero = () => {
           {/* 3 AVATAR IMAGES */}
           <ThreeAvatars>
             <img
-              src="team/Jane Doe.jpg"
+              src="team/Jane Doe.webp"
               alt="Jane Doe"
               className="xl:w-16 w-10 "
             />
             <img
-              src="team/John Smith.jpg"
+              src="team/John Smith.webp"
               alt="John Smith"
               className="xl:w-16 w-10 -translate-x-[30%]"
             />
             <img
-              src="team/Steve Davis.jpg"
+              src="team/Steve Davis.webp"
               alt="Steve Davis"
               className="xl:w-16 w-10 absolute left-1/2 translate-x-[30%]"
             />

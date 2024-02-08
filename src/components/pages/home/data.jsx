@@ -1,11 +1,11 @@
 import { BsBuildingGear, BsHouseDoor, BsBuildings } from "react-icons/bs";
 
-const swiperOpacityImgs = ["swiper1.jpg", "swiper2.jpg", "swiper3.jpg"];
+const swiperOpacityImgs = ["swiper1.webp", "swiper2.webp", "swiper3.webp"];
 const servicesGrid = [
   {
     title: "Residential",
-    bigImg: "services/big-img1.jpg",
-    smallImg: "services/small-img1.jpg",
+    bigImg: "services/big-img1.webp",
+    smallImg: "services/small-img1.webp",
     card: {
       icon: <BsHouseDoor />,
       title: "Houses & Condos",
@@ -16,8 +16,8 @@ const servicesGrid = [
   },
   {
     title: "Commercial",
-    bigImg: "services/big-img2.jpg",
-    smallImg: "services/small-img2.jpg",
+    bigImg: "services/big-img2.webp",
+    smallImg: "services/small-img2.webp",
     card: {
       icon: <BsBuildings />,
       title: "Offices & Malls",
@@ -28,8 +28,8 @@ const servicesGrid = [
   },
   {
     title: "Renovation",
-    bigImg: "services/big-img3.jpg",
-    smallImg: "services/small-img3.jpg",
+    bigImg: "services/big-img3.webp",
+    smallImg: "services/small-img3.webp",
     card: {
       icon: <BsBuildingGear />,
       title: "Interiors",
