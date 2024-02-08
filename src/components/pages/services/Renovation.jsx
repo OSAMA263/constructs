@@ -9,7 +9,7 @@ export default function Renovation() {
       background="services/big-img3.webp"
       title="Services - Renovation"
       description="our blogs Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quaerat ipsa amet fuga ullam saepe?"
-      href="https://osama263.github.io/constructs/services/renovation"
+      href="https://osama263.github.io/constructs/#/services/renovation"
     />
   );
 }

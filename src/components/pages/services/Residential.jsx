@@ -9,7 +9,7 @@ export default function Residential() {
       background="services/big-img1.webp"
       title="Services - Residential"
       description="our blogs Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quaerat ipsa amet fuga ullam saepe?"
-      href="https://osama263.github.io/constructs/services/residential"
+      href="https://osama263.github.io/constructs/#/services/residential"
     />
   );
 }

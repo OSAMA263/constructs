@@ -12,7 +12,7 @@ export default function Projects() {
     <PageWrapper
       title="Constructs - Projects"
       description="our projects Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quaerat ipsa amet fuga ullam saepe?"
-      href="https://osama263.github.io/constructs/projects"
+      href="https://osama263.github.io/constructs/#/projects"
       bg="bg-black"
     >
       <LayoutSection>

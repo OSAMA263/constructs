@@ -15,7 +15,7 @@ export default function Contact() {
       bg="bg-gray-200"
       title="Constructs - Contact Us"
       description="coontact us and shit, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quaerat ipsa amet fuga ullam saepe?"
-      href="https://osama263.github.io/constructs/contact"
+      href="https://osama263.github.io/constructs/#/contact"
     >
       <div className="bg-gray-200">
         <LayoutSection

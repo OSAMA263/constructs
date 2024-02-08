@@ -66,7 +66,7 @@ const Folder = (props) => {
   return (
     <div className={"relative rounded-3xl md:w-full w-1/2 mx-auto  " + styles}>
       <div className="relative font-medium grid grid-cols-3">
-        <h1 className="lg:p-6 p-4 relative w-full bg-lime col-span-2 rounded-br-xl !text-black">
+        <h1 className="lg:p-6 p-4 sm:text-base text-sm relative w-full bg-lime col-span-2 rounded-br-xl !text-black">
           {title}
           <CurveImg tr bl curveColor="lime" />
         </h1>

@@ -12,7 +12,7 @@ export default function Team() {
       bg="bg-black"
       title="Constructs - the team"
       description="our blogs Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quaerat ipsa amet fuga ullam saepe?"
-      href="/team"
+      href="https://osama263.github.io/constructs/#/team"
     >
       <LayoutSection id="team" styles="">
         <SectionTitle

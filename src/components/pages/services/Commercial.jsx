@@ -9,7 +9,7 @@ export default function Commercial() {
       background="services/big-img2.webp"
       title="Services - Commercial"
       description="our blogs Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quaerat ipsa amet fuga ullam saepe?"
-      href="https://osama263.github.io/constructs/services/commercial"
+      href="https://osama263.github.io/constructs/#/services/commercial"
     />
   );
 }
