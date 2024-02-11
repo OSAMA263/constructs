@@ -5,6 +5,7 @@ import { DATA_BLOGS } from "./data";
 import { GoPlus } from "react-icons/go";
 import PageWrapper from "../../PageWrapper";
 import SlideUpElement from "../../shared/SlideUpElement";
+import tw from "tailwind-styled-components";
 
 export default function Blog() {
   return (
@@ -47,11 +48,11 @@ const Card = ({ bg, details, text, homeUrl }) => {
   return (
     <Link
       to={homeUrl ?? ""}
-      className="relative space-y-4 font-medium lg-mobile:w-full w-1/2 mx-auto block text-darkGray"
+      className="relative space-y-4 font-medium lg-mobile:w-full sm:w-1/2 w-[60%] mx-auto block text-darkGray"
     >
       <img src={bg} className="rounded-2xl" alt={bg} />
       {/* avatar details */}
-      <div className="lg:text-sm text-xs flex-between">
+      <ContentWrapper>
         <div className="flex items-center gap-x-4">
           <img className="w-16 rounded-full" src={avatar} alt={avatar} />
           <div className="flex flex-col items-center gap-y-2">
@@ -64,12 +65,27 @@ const Card = ({ bg, details, text, homeUrl }) => {
           <h1 className="p-2 rounded-lg bg-lime w-fit">{role}</h1>
           <h1>{date}</h1>
         </div>
-      </div>
+      </ContentWrapper>
       {/* large text */}
-      <h1 className="2xl:text-4xl lg:text-2xl font-semibold text-black">{text}</h1>
-      <button aria-label="pluse icon" className="lime-button !bottom-[90%] text-2xl">
+      <h1 className="2xl:text-4xl lg:text-2xl font-semibold text-black">
+        {text}
+      </h1>
+      <button
+        aria-label="pluse icon"
+        className="lime-button !bottom-[85%] text-2xl"
+      >
         <GoPlus />
       </button>
     </Link>
   );
 };
+
+const ContentWrapper=tw.div`
+lg:text-sm 
+text-xs 
+flex
+max-[450px]:flex-col
+max-[450px]:items-center 
+gap-y-2
+justify-between
+`

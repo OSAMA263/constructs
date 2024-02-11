@@ -31,7 +31,7 @@ export const GridFolders = () => {
   return (
     <div className="py-28 bg-lime rounded-t-[60px]">
       <LayoutSection styles="grid md:grid-cols-3 md:gap-6 gap-12 !py-0">
-        <SlideUpElement offsetY="70%" ind={1}>
+        <SlideUpElement offsetY="70%" styles="w-full" ind={1}>
           <Folder
             title="RESIDENTIAL"
             num="469"
@@ -64,9 +64,9 @@ const Folder = (props) => {
   const { title, num, styles, par } = props;
 
   return (
-    <div className={"relative rounded-3xl md:w-full w-1/2 mx-auto  " + styles}>
+    <div className={"relative rounded-3xl md:w-full w-[60%] mx-auto " + styles}>
       <div className="relative font-medium grid grid-cols-3">
-        <h1 className="lg:p-6 p-4 sm:text-base text-sm relative w-full bg-lime col-span-2 rounded-br-xl !text-black">
+        <h1 className="lg:p-6 p-4 sm:text-base text-xs relative w-full bg-lime col-span-2 rounded-br-xl !text-black">
           {title}
           <CurveImg tr bl curveColor="lime" />
         </h1>

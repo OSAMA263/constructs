@@ -10,6 +10,7 @@ import { projects_data } from "../../projects/data";
 import { Link } from "react-router-dom";
 import SlideUpElement from "../../../shared/SlideUpElement";
 import ZoomInImage from "../../../shared/ZoomInImage";
+
 export default function AllProjects() {
   return (
     <section id="projects">
@@ -82,9 +83,9 @@ const Slide = ({ title, text, img }) => {
       <div className="rounded-2xl overflow-hidden w-full h-full hover:[&_img]:scale-110">
         {/* PROJECTS TEXT */}
         <ProjectTextWrapper>
-          <div className="col-span-2 xl:pe-6 py-4 rounded-br-xl relative bg-lime grid grid-cols-2 ">
-            <h1 className="lg:text-4xl text-3xl">{title}</h1>
-            <p>{text}</p>
+          <div className="col-span-2 xl:pe-6 max-sm:py-1 py-4 rounded-br-xl relative bg-lime grid items-end grid-cols-2 ">
+            <h1 className="lg:text-4xl sm:text-3xl text-lg">{title}</h1>
+            <p className="max-sm:text-xs">{text}</p>
             <CurveImg curveColor="lime" tr bl />
           </div>
           <div></div>

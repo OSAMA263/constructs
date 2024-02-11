@@ -51,7 +51,7 @@ const TeamSwiper = () => {
         {THE_TEAM_DATA.map(({ img, name, role, des }) => (
           <SwiperSlide key={name}>
             <div className="flex overflow-hidden cursor-pointer rounded-2xl">
-              <img src={img} className="w-56" alt={name} />
+              <img src={img} className="w-56 max-[440px]:hidden" alt={name} />
               <div className="flex w-full flex-col justify-center p-8 font-medium text-center bg-darkGray gap-y-4 text-lightGray">
                 <div className="uppercase">
                   <h1>{name}</h1>

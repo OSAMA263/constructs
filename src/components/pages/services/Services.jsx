@@ -43,17 +43,17 @@ const StickyItem = ({ data }) => {
       <div className="grid grid-cols-2 overflow-hidden rounded-2xl">
         <StickyGrid>
           <h6 className="sm:text-base text-xs uppercase text-lime">{lime_title}</h6>
-          <h1 className="xl:text-5xl sm:text-3xl text-2xl text-white">{title}</h1>
-          <p className="sm:text-base text-xs text-white">{text}</p>
+          <h1 className="xl:text-5xl sm:text-3xl text-xl text-white">{title}</h1>
+          <p className="sm:text-base max-sm:font-normal text-xs text-white">{text}</p>
           <Link
             to={url}
-            className="sm:p-4 sm:px-10 p-2 md:text-sm text-xs bg-lime hover:bg-lightGray"
+            className="sm:p-4 sm:px-10 p-[1px] md:text-sm text-xs bg-lime hover:bg-lightGray"
           >
             LEARN MORE
           </Link>
         </StickyGrid>
         {/* service background image background */}
-        <img src={img} alt={title} />
+        <img src={img} className="h-full " alt={title} />
       </div>
     </div>
   );
@@ -68,7 +68,7 @@ md:px-20
 px-2 
 gap-y-4
 text-center 
-py-4 
+py-8
 font-medium 
 bg-darkGray 
 `

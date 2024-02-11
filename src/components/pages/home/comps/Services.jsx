@@ -42,7 +42,7 @@ const GridColumn = ({ flexDir, data, i }) => {
       <SlideUpElement offsetY="50%" styles="h-full w-full">
         <Link to={url}>
           <LeftContentWrapper animate="animate" whileHover="whileHover">
-            <div className="flex-between gap-x-10">
+            <div className="flex-between sm:gap-x-10 gap-x-2">
               <h1>{title}</h1>
               <div className="lime-line"></div>
               <h3 className="xl:px-6 xl:py-2 p-2 md:text-base text-xs tracking-widest rounded-lg text-darkGray bg-lime">
@@ -57,7 +57,7 @@ const GridColumn = ({ flexDir, data, i }) => {
                 className="absolute object-cover w-full h-full rounded-2xl"
               />
               <div className="absolute">
-                <h2 className="relative p-4 xl:text-5xl text-3xl bg-black text-outline rounded-br-2xl w-fit">
+                <h2 className="relative p-4 xl:text-5xl sm:text-3xl text-lg bg-black text-outline rounded-br-2xl w-fit">
                   0{i + 1} Service <CurveImg tr bl curveColor="black" />
                 </h2>
               </div>
@@ -106,7 +106,8 @@ const LeftContentWrapper = tw(motion.div)`
 [&_h1]:text-white
 text-nowrap
 [&_h1]:xl:text-5xl
-[&_h1]:text-4xl
+[&_h1]:sm:text-4xl
+[&_h1]:text-2xl
 font-semibold
 w-full
 h-full

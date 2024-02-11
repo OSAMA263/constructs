@@ -10,7 +10,7 @@ export default function PageWrapper(props) {
       initial={{ opacity: 1, delay: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className={bg + " relative"}
+      className={bg + " relative overflow-x-hidden"}
     >
       <Helmet>
         <title>{title}</title>

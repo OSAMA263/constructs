@@ -23,14 +23,14 @@ const Hero = (props) => {
   return (
     <>
       <SlideUpElement offsetY="20%">
-        <div className="flex-between gap-x-10 !items-end mb-20">
+        <div className="flex justify-between gap-x-10 !items-end mb-20">
           <div className="space-y-4">
             <h6 className="uppercase text-lime">{smallTitle}</h6>
             <h1 className="xl:text-6xl text-2xl font-bold text-white">
               {largeTitle}
             </h1>
           </div>
-          <p className="text-lightGray">{par}</p>
+          <p className="text-lightGray max-sm:hidden">{par}</p>
         </div>
       </SlideUpElement>
       {/* FIXED BG IMAGE */}

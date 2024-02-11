@@ -20,7 +20,7 @@ export default function Contact() {
       <div className="bg-gray-200">
         <LayoutSection
           id="form"
-          styles="xl:w-[35%] lg:w-[40%] md:w-[50%] w-[60%]"
+          styles="xl:w-[35%] lg:w-[40%] md:w-[50%] sm:w-[60%]"
         >
           <ContactForm title="Contact Us" />
           <FAQ />
@@ -32,7 +32,7 @@ export default function Contact() {
 
 export const ContactForm = ({ title }) => {
   return (
-    <SlideUpElement offsetY="45%">
+    <SlideUpElement offsetY="35%">
       <div className="flex flex-col items-center py-4 text-center gap-y-6">
         <h6 className="font-medium tracking-widest uppercase sm:text-base text-sm text-darkGray">
           get in touch

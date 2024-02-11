@@ -33,7 +33,7 @@ export default function Projects() {
       <GridFolders />
 
       <div className="bg-gray-200">
-        <LayoutSection id="form" styles="xl:w-[35%] lg:w-[40%] md:w-[50%] w-[60%]">
+        <LayoutSection id="form" styles="xl:w-[35%] lg:w-[40%] md:w-[50%] sm:w-[60%]">
           <SlideUpElement offsetY="35%">
             <ContactForm title="Request A Quote" />
           </SlideUpElement>

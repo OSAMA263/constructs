@@ -41,7 +41,7 @@ const Hero = () => {
   return (
     <div className="flex flex-col items-center gap-y-4">
       {/* HERO LARGE TEXT */}
-      <div className="text-center space-y-2 font-bold tracking-wider xl:text-7xl sm:text-5xl text-4xl">
+      <div className="text-center space-y-2 font-bold tracking-wider xl:text-7xl sm:text-5xl text-3xl">
         <h1>
           GET TO<span className="italic font-extralight"> KNOW</span>
         </h1>
@@ -69,7 +69,7 @@ const Hero = () => {
         </div>
       </div>
       <p className="tracking-widest text-darkGray">MEET OUR TEAM</p>
-      <p className="max-w-[50%] text-center lg:text-lg">
+      <p className="min-w-[80%] max-w-[50%] text-center lg:text-lg">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
         convallis.
       </p>
@@ -88,5 +88,6 @@ relative
 flex 
 items-center 
 justify-center
-px-4
+sm:px-4
+pe-4
 `;
