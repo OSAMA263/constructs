@@ -14,7 +14,7 @@ export default function Home() {
       title="Constructs"
       description="rendom shit pla pla get Loremed ipsum dolor sit amet consectetur, adipisicing elit. Laborum quo fugit adipisci assumenda nesciunt dignissimos."
       href="https://osama263.github.io/constructs/"
-      bg="bg-black"
+      bg="bg-black overflow-x-hidden"
     >
       <SwiperOpacity />
       {/* 3 folders grid bg lime section */}

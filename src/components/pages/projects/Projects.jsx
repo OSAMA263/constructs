@@ -24,8 +24,8 @@ export default function Projects() {
         />
         <div className="grid md:grid-cols-2 py-10 gap-14">
           {projects_data.map((data, i) => (
-            <SlideUpElement key={i} ind={i + 1} offsetY="35%">
-              <StickyItems data={data} key={data.title} />
+            <SlideUpElement key={data.title} styles="top-0 sticky" ind={i + 1} offsetY="35%">
+              <StickyItems data={data}  />
             </SlideUpElement>
           ))}
         </div>
@@ -46,7 +46,7 @@ export default function Projects() {
 const StickyItems = ({ data }) => {
   const { title, img, text } = data;
   return (
-    <div className="rounded-2xl sticky top-0 overflow-hidden [&_img]:hover:scale-110 ">
+    <div className="rounded-2xl overflow-hidden [&_img]:hover:scale-110 ">
       <img src={img} alt={title} />
       <CardText>
         <h1 className="2xl:text-5xl xl:text-3xl text-xl font-bold">{title}</h1>
@@ -58,8 +58,6 @@ const StickyItems = ({ data }) => {
 
 const CardText = tw.div`
 absolute
-left-1/2 
--translate-x-1/2 
 w-full
 h-full
 bottom-0
@@ -72,5 +70,5 @@ to-[#292a2cf3]
 sm:py-10
 pb-1
 text-center
-space-y-2
+space-y-2 rounded-2xl
 text-white`;

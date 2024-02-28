@@ -16,7 +16,7 @@ export default function About() {
       title="Constructs - About Us"
       description="our blogs Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quaerat ipsa amet fuga ullam saepe?"
       href="https://osama263.github.io/constructs/#/about"
-      bg="bg-gray-100"
+      bg="bg-gray-100 overflow-x-hidden"
     >
       <LayoutSection id="about us" styles="!-44">
         <SlideUpElement offsetY="40%">

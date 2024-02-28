@@ -10,7 +10,7 @@ export default function PageWrapper(props) {
       initial={{ opacity: 1, delay: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className={bg + " relative overflow-x-hidden"}
+      className={bg + " relative"}
     >
       <Helmet>
         <title>{title}</title>
@@ -24,26 +24,6 @@ export default function PageWrapper(props) {
 }
 
 const SlidingDivs = () => {
-  const parentAnimation = {
-    initial: { display: "block" },
-    animate: {
-      display: "none",
-      transition: { when: "afterChildren" },
-    },
-  };
-
-  const fadeOutWhiteDiv = {
-    initial: { opacity: 1 },
-    animate: { opacity: 0, transition: { duration: 0.2, delay: 0.7 } },
-  };
-
-  const slideAnimation = {
-    initial: { x: 0 },
-    animate: (custom) => ({
-      x: custom,
-      transition: { duration: 1, delay: 0.5 },
-    }),
-  };
   return (
     <motion.div
       initial="initial"
@@ -66,7 +46,26 @@ const SlidingDivs = () => {
     </motion.div>
   );
 };
+  const parentAnimation = {
+    initial: { display: "block" },
+    animate: {
+      display: "none",
+      transition: { when: "afterChildren" },
+    },
+  };
 
+  const fadeOutWhiteDiv = {
+    initial: { opacity: 1 },
+    animate: { opacity: 0, transition: { duration: 0.2, delay: 0.7 } },
+  };
+
+  const slideAnimation = {
+    initial: { x: 0 },
+    animate: (custom) => ({
+      x: custom,
+      transition: { duration: 1, delay: 0.5 },
+    }),
+  };
 const Slide = tw(motion.div)`
 bg-black
 w-1/2

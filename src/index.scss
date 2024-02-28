@@ -13,6 +13,7 @@ $gray-color: #292d32;
 $light-gray-color: #cccccc;
 
 // global styles
+
 body {
   margin: 0px;
   padding: 0px;
@@ -39,7 +40,7 @@ body {
       border: 1px solid black;
     }
   }
-  img{
+  img {
     object-fit: cover;
     max-width: 100%;
   }
@@ -63,6 +64,9 @@ body {
       padding: 6px;
     }
   }
+  .lazy-load-image-loaded {
+    display: inline!important;
+  }
   // global classes
   .lime-line {
     width: 100%;
@@ -77,7 +81,7 @@ body {
   }
   .text-outline {
     -webkit-text-stroke-color: rgb(255, 255, 255) !important;
-    -webkit-text-stroke-width: .5px !important;
+    -webkit-text-stroke-width: 0.5px !important;
     color: transparent !important;
   }
 }
