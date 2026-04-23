@@ -23,7 +23,8 @@ const WhoWeAre = () => {
             h1="discover"
             h2="our story"
             par="who we are"
-            styles="sm:text-center sm:flex-col border-black"
+            des="Started as a small contracting team, grown into a trusted full-service construction."
+            styles="sm:text-center sm:flex-col border-black [&_p]:!text-center"
           />
           {/* article with zoomed in img on scroll */}
           <Article>
@@ -61,10 +62,14 @@ const History = () => {
                         <span className="p-6 text-3xl bg-darkGray w-fit rounded-xl text-lime">
                           {obj.icon}
                         </span>
-                        <h1 className="text-3xl font-bold">{obj.state}</h1>
+                        <h1 className="text-3xl font-bold">
+                          {obj.state}
+                        </h1>
                         <p className="text-lime">{obj.date}</p>
                       </div>
-                      <h1 className="text-wrap lg-mobile:block hidden">{obj.text}</h1>
+                      <h1 className="text-wrap lg-mobile:block hidden">
+                        {obj.text}
+                      </h1>
                     </>
                   )}
                 </div>

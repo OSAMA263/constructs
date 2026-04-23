@@ -43,7 +43,12 @@ export const ContactForm = ({ title }) => {
       <Form>
         <label htmlFor="name">
           Name
-          <input type="text" id="name" name="name" placeholder="User Name" />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="User Name"
+          />
         </label>
         <label htmlFor="email">
           Email Address
@@ -109,17 +114,17 @@ const FAQ = () => {
           <h1 className="lg-mobile:text-5xl text-3xl  font-semibold">
             Frequently Asked Questions
           </h1>
-          <p className="sm:max-w-[480px] text-center text-darkGray text-balance">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum iure
-            consectetur nesciunt.
+          <p className="sm:max-w-[680px] text-center text-darkGray text-balance">
+            Got questions? Here's everything you need to know before
+            starting your project with us.
           </p>
         </div>
       </SlideUpElement>
       {/* ACCORDIONS------ */}
       <Accordion allowMultiple>
-        {FAQ_DATA.map(({ Q }, i) => (
-          <SlideUpElement offsetY="20%" key={i} ind={i}>
-            <AccordionItem className="!overflow-hidden !rounded-3xl mb-8">
+        {FAQ_DATA.map(({ Q, A }, i) => (
+          <SlideUpElement offsetY="20%" key={Q} ind={i}>
+            <AccordionItem className="!overflow-hidden !rounded-3xl mb-3">
               {({ isExpanded }) => (
                 <>
                   <AccordionButton
@@ -129,7 +134,9 @@ const FAQ = () => {
                     className="[&_#plus>span]:hover:!bg-white !flex !flex-col !items-start [&_.chakra-collapse]:!w-full"
                   >
                     <div className="w-full sm:p-10 p-4 flex-between gap-x-4 text-start">
-                      <h1 className="sm:text-2xl text-lg font-medium">{Q}</h1>
+                      <h1 className="sm:text-2xl text-lg font-medium">
+                        {Q}
+                      </h1>
                       {/* PLUS SIGN */}
                       <div id="plus" className="relative w-4">
                         <PlusSpan
@@ -137,16 +144,15 @@ const FAQ = () => {
                         ></PlusSpan>
                         <PlusSpan
                           className={
-                            isExpanded ? "!bg-white rotate-0" : "rotate-90"
+                            isExpanded
+                              ? "!bg-white rotate-0"
+                              : "rotate-90"
                           }
                         ></PlusSpan>
                       </div>
                     </div>
                     <AccordionPanel className="sm:p-10 p-4 sm:text-lg text-sm !text-start !bg-darkGray !text-lightGray">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Obcaecati reprehenderit eligendi repellat iure, asperiores
-                      deserunt blanditiis ut explicabo non odit, quisquam ipsum
-                      eaque.
+                      {A}
                     </AccordionPanel>
                   </AccordionButton>
                 </>
@@ -169,9 +175,24 @@ duration-700
 `;
 
 const FAQ_DATA = [
-  { Q: "What is the scope of the construction project?", A: "" },
-  { Q: "How is security managed on the construction site?", A: "" },
-  { Q: "What is the purpose of the construction project?", A: "" },
-  { Q: "Who are the concepts involved in the project?", A: "" },
-  { Q: "How can I contact the Constructs team?", A: "" },
+  {
+    Q: "What is the scope of the construction project?",
+    A: "We handle everything from initial planning and design to execution and final handover — residential, commercial, and infrastructure projects of all sizes.",
+  },
+  {
+    Q: "How is security managed on the construction site?",
+    A: "All our sites follow strict safety protocols, with trained supervisors on-site daily, secured perimeters, and full compliance with local safety regulations.",
+  },
+  {
+    Q: "What is the purpose of the construction project?",
+    A: "Every project we take on is designed to meet the client's specific needs — whether that's a family home, office building, or public infrastructure.",
+  },
+  {
+    Q: "Who are the concepts involved in the project?",
+    A: "Each project involves our architects, structural engineers, project managers, and skilled contractors working together from day one.",
+  },
+  {
+    Q: "How can I contact the Constructs team?",
+    A: "You can reach us via the contact form on our website, by email, or by phone — we typically respond within 24 hours.",
+  },
 ];

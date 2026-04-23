@@ -19,6 +19,7 @@ export default function Services() {
             h1="our"
             h2="services"
             par="overview"
+            des="We deliver end-to-end construction solutions built on precision."
             styles="flex-between border-black mb-20"
           />
           <SlideUpElement offsetY="30%">
@@ -42,9 +43,15 @@ const StickyItem = ({ data }) => {
     <div className="sticky top-0">
       <div className="grid grid-cols-2 overflow-hidden rounded-2xl">
         <StickyGrid>
-          <h6 className="sm:text-base text-xs uppercase text-lime">{lime_title}</h6>
-          <h1 className="xl:text-5xl sm:text-3xl text-xl text-white">{title}</h1>
-          <p className="sm:text-base max-sm:font-normal text-xs text-white">{text}</p>
+          <h6 className="sm:text-base text-xs uppercase text-lime">
+            {lime_title}
+          </h6>
+          <h1 className="xl:text-5xl sm:text-3xl text-xl text-white">
+            {title}
+          </h1>
+          <p className="sm:text-base max-sm:font-normal text-xs text-white">
+            {text}
+          </p>
           <Link
             to={url}
             className="sm:p-4 sm:px-10 p-[1px] md:text-sm text-xs bg-lime hover:bg-lightGray"
@@ -59,7 +66,7 @@ const StickyItem = ({ data }) => {
   );
 };
 
-const StickyGrid=tw.div`
+const StickyGrid = tw.div`
 flex 
 flex-col 
 items-center 
@@ -71,7 +78,7 @@ text-center
 py-8
 font-medium 
 bg-darkGray 
-`
+`;
 
 const DATA_TEXT = [
   {

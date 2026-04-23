@@ -63,7 +63,7 @@ const TeamSwiper = () => {
           </SwiperSlide>
         ))}
         <div
-          className="absolute bottom-0 z-10 flex -translate-x-1/2 left-1/2 gap-x-4"
+          className="absolute bottom-2 z-10 flex -translate-x-1/2 left-1/2 gap-x-4"
           id="custom-pagination"
         ></div>
       </Swiper>

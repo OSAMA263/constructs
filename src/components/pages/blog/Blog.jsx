@@ -29,6 +29,7 @@ export const BlogsGrid = ({ homeUrl }) => {
           h2="blog"
           par="our recent articles"
           styles="border-black flex-between"
+          des="Updates straight from our engineering team."
         />
         <div className="grid lg-mobile:grid-cols-3 lg-mobile:gap-4 gap-y-10">
           {DATA_BLOGS.map(({ bg, details, text }, i) => (
@@ -62,17 +63,17 @@ const Card = ({ bg, details, text, homeUrl }) => {
         </div>
         {/*  */}
         <div className="space-y-2 tracking-widest text-center">
-          <h1 className="p-2 rounded-lg bg-lime w-fit">{role}</h1>
+          <h1 className="p-2 text-xs rounded-lg bg-lime w-fit">{role}</h1>
           <h1>{date}</h1>
         </div>
       </ContentWrapper>
       {/* large text */}
-      <h1 className="2xl:text-4xl lg:text-2xl font-semibold text-black">
+      <h1 className="2xl:text-2xl lg:text-2xl font-semibold text-black">
         {text}
       </h1>
       <button
         aria-label="pluse icon"
-        className="lime-button !bottom-[85%] text-2xl"
+        className="lime-button !bottom-[90%] text-2xl"
       >
         <GoPlus />
       </button>

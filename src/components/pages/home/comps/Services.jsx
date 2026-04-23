@@ -16,6 +16,7 @@ export default function Services() {
         h1="Our"
         h2="Services"
         par="OVERVIEW"
+        des="We deliver end-to-end construction solutions built on precision."
         styles="flex-between border-lime [&_h1]:text-white [&_h2]:text-lime [&_h3]:text-lightGray [&_p]:text-lightGray"
       />
       {/* 3 ROWS GRID CARDS */}
@@ -83,8 +84,8 @@ const GridColumn = ({ flexDir, data, i }) => {
             </div>
             <Card>
               <HouseIcon>{card.icon}</HouseIcon>
-              <h1 className="2xl:text-3xl text-2xl font-bold">{card.title}</h1>
-              <p className="font-medium xl:text-base text-sm">{card.text} </p>
+              <h1 className="2xl:text-2xl text-xl font-bold">{card.title}</h1>
+              <p className="font-medium text-sm">{card.text} </p>
               <button
                 aria-label={"open " + url}
                 className="text-3xl lime-button"
@@ -92,7 +93,7 @@ const GridColumn = ({ flexDir, data, i }) => {
                 <GoPlus />
               </button>
             </Card>
-            <p className="xl:text-3xl leading-normal text-xl text-white">
+            <p className="xl:text-xl leading-normal text-base text-white">
               {bigText}
             </p>
           </RightContentWrapper>
@@ -143,10 +144,10 @@ text-balance
 const HouseIcon = tw.span`
 w-fit 
 rounded-xl 
-xl:text-4xl
-2xl:text-5xl
-xl:p-10
-p-6
+xl:text-2xl
+2xl:text-3xl
+xl:p-8
+p-4
 text-3xl 
 text-lime 
 shadow-[4px_4px_20px_0.5px_#bef66b7e]

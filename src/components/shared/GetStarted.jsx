@@ -15,7 +15,7 @@ export default function GetStarted({ overlayBgc }) {
           <img
             src="get-in-touch.webp"
             alt="contact bg"
-            className="rounded-2xl w-full h-full max-[380px]:h-[30vh]"
+            className="rounded-2xl w-full h-96 max-[380px]:h-[30vh]"
           />
           {/* get in touch text */}
           <div className="absolute top-[8%] flex flex-col items-center w-full gap-y-6">

@@ -9,10 +9,10 @@ const servicesGrid = [
     card: {
       icon: <BsHouseDoor />,
       title: "Houses & Condos",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      text: "Custom homes and condos built to your vision, with quality materials and expert craftsmanship.",
     },
     bigText: "Our skilled craftsmen specialize in residential construction.",
-    url:"services/residential"
+    url: "services/residential"
   },
   {
     title: "Commercial",
@@ -21,10 +21,10 @@ const servicesGrid = [
     card: {
       icon: <BsBuildings />,
       title: "Offices & Malls",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      text: "Large-scale commercial builds delivered on time, on budget, and built to perform for decades.",
     },
     bigText: "We are the ideal choice for commercial construction.",
-    url:"services/commercial"
+    url: "services/commercial"
   },
   {
     title: "Renovation",
@@ -33,10 +33,10 @@ const servicesGrid = [
     card: {
       icon: <BsBuildingGear />,
       title: "Interiors",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      text: "From full gut renovations to interior upgrades — we transform existing spaces into something new.",
     },
     bigText: "We specialize in breathing new life into existing spaces.",
-    url:"services/renovation"
+    url: "services/renovation"
   },
-];
+]
 export { swiperOpacityImgs, servicesGrid,  };

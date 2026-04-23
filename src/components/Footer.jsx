@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <div className=" text-white bg-black">
       <LayoutSection styles="!pb-8">
-        <SlideUpElement offsetY="20%">
+        <SlideUpElement offsetY="10%">
           <Container>
             <Link to="/" className="w-fit h-fit sm:block hidden" aria-label="home page">
               <img src="logo-white.svg" className="w-52" alt="log" />

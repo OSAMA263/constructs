@@ -14,7 +14,8 @@ export default function OurValues() {
           h1="our"
           h2="values"
           par="what we belive"
-          styles="border-black sm:text-center sm:flex-col"
+          des="We build trust, relationships, and communities that last."
+          styles="border-black sm:text-center sm:flex-col [&_p]:!text-center"
         />
         {/* FOUR CARD GRID OUR VALUES */}
         <Grid>
@@ -23,6 +24,7 @@ export default function OurValues() {
               title="Hardwork"
               icon={<FaLocationArrow />}
               styles="bg-white text-black [&_p]:!text-gray-500"
+              des="Every project gets our full commitment, from the first blueprint to the final brick."
             />
           </SlideUpElement>
           <SlideUpElement ind={2} offsetY="69%">
@@ -30,6 +32,7 @@ export default function OurValues() {
               title="Innovation"
               icon={<RiArrowLeftDoubleLine />}
               styles="bg-white text-black [&_p]:!text-gray-500"
+              des="We embrace modern techniques and materials to deliver smarter, more efficient builds."
             />
           </SlideUpElement>
           <SlideUpElement ind={3} offsetY="69%">
@@ -37,6 +40,7 @@ export default function OurValues() {
               title="Quality"
               icon={<BsBuildingGear />}
               styles="bg-darkGray text-white [&_span]:!text-lime"
+              des="No shortcuts. Every structure we deliver meets the highest standards of craftsmanship."
             />
           </SlideUpElement>
           <SlideUpElement ind={4} offsetY="69%">
@@ -44,6 +48,7 @@ export default function OurValues() {
               title="Service"
               icon={<BsBuildings />}
               styles="bg-black text-white [&_span]:!text-lime"
+              des="Our clients come first. We keep you informed, involved, and satisfied at every stage."
             />
           </SlideUpElement>
         </Grid>
@@ -52,13 +57,13 @@ export default function OurValues() {
   );
 }
 
-const GridCard = ({ styles, icon, title }) => {
+const GridCard = ({ styles, icon, title,des }) => {
   return (
-    <div className={styles + " rounded-2xl 2xl:p-14 p-6 flex flex-col gap-y-8"}>
-      <span className="text-4xl">{icon}</span>
+    <div className={styles + " rounded-2xl 2xl:p-8 p-4 flex flex-col gap-y-6 h-full"}>
+      <span className="text-3xl">{icon}</span>
       <h1 className="2xl:text-4xl text-2xl font-semibold">{title}</h1>
       <p className="font-medium text-balance">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        {des}
       </p>
     </div>
   );
@@ -68,6 +73,5 @@ const Grid = tw.div`
 grid 
 xl:grid-cols-4
 sm:grid-cols-2
-gap-8
-py-8
+gap-4
 `;

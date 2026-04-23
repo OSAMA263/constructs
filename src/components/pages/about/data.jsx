@@ -12,14 +12,14 @@ const history = [
     icon: <BsBuildingGear />,
     state: "Grow",
     date: "2016-2018",
-    text: "Consectetur adipiscing elit, suspendisse varius eros.",
+    text: "Founded with a small team and a big vision — delivering quality residential builds in the local market.",
   },
   {},
   {
     icon: <BsHouseDoor />,
     state: "Start",
     date: "2014-2018",
-    text: "Consectetur adipiscing elit, suspendisse varius eros.",
+    text: "Expanded into commercial construction, growing our team and taking on larger, more complex projects.",
   },
   {},
 
@@ -27,7 +27,7 @@ const history = [
     icon: <BsBuildings />,
     state: "Today",
     date: "2018-NOW",
-    text: "Consectetur adipiscing elit, suspendisse varius eros.",
+    text: "A full-service construction firm with 200+ completed projects, trusted by clients across the region.",
   },
 ];
 export { ourStory, history,  };

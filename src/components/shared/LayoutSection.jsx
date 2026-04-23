@@ -11,11 +11,10 @@ export default function LayoutSection(props) {
 
 const Section = tw.section`
 mx-auto 
-xl:w-[65%] 
-lg:w-[75%] 
-md:w:[80%]
-w-[90%]
-lg:py-28
-pb-20
-pt-28
+2xl:w-[65%]
+xl:w-[75%] 
+lg:w-[85%] 
+w-[95%]
+pb-10
+pt-24
 `;

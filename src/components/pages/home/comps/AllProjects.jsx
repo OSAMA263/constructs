@@ -21,7 +21,8 @@ export default function AllProjects() {
               h1="All"
               h2="Projects"
               par="OUR LATEST"
-              styles="sm:flex-col sm:text-center border-transparent !mb-1 [&_h3]:text-lightGray [&_h1]:text-white [&_h2]:text-lime [&_p]:text-lightGray"
+              des="From luxury homes to large-scale commercial developments."
+              styles="sm:flex-col [&_p]:!text-center sm:text-center border-transparent !mb-1 [&_h3]:text-lightGray [&_h1]:text-white [&_h2]:text-lime [&_p]:text-lightGray"
             />
           </ProjectsTitle>
           {/* zomom in img */}

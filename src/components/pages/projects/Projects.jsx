@@ -20,12 +20,18 @@ export default function Projects() {
           h1="our"
           h2="projects"
           par="latest"
-          styles="border-lime mb-10 pb-10 sm:text-center sm:flex-col [&_p]:text-lightGray [&_h3]:text-lightGray [&_h2]:text-lime [&_h1]:text-white"
+          des="From luxury homes to large-scale commercial developments."
+          styles="border-lime [&_p]:!text-center mb-10 pb-10 sm:text-center sm:flex-col [&_p]:text-lightGray [&_h3]:text-lightGray [&_h2]:text-lime [&_h1]:text-white"
         />
         <div className="grid md:grid-cols-2 py-10 gap-14">
           {projects_data.map((data, i) => (
-            <SlideUpElement key={data.title} styles="top-0 sticky" ind={i + 1} offsetY="35%">
-              <StickyItems data={data}  />
+            <SlideUpElement
+              key={data.title}
+              styles="top-0 sticky"
+              ind={i + 1}
+              offsetY="35%"
+            >
+              <StickyItems data={data} />
             </SlideUpElement>
           ))}
         </div>
@@ -33,7 +39,10 @@ export default function Projects() {
       <GridFolders />
 
       <div className="bg-gray-200">
-        <LayoutSection id="form" styles="xl:w-[35%] lg:w-[40%] md:w-[50%] sm:w-[60%]">
+        <LayoutSection
+          id="form"
+          styles="xl:w-[35%] lg:w-[40%] md:w-[50%] sm:w-[60%]"
+        >
           <SlideUpElement offsetY="35%">
             <ContactForm title="Request A Quote" />
           </SlideUpElement>
@@ -49,8 +58,12 @@ const StickyItems = ({ data }) => {
     <div className="rounded-2xl overflow-hidden [&_img]:hover:scale-110 ">
       <img src={img} alt={title} />
       <CardText>
-        <h1 className="2xl:text-5xl xl:text-3xl text-xl font-bold">{title}</h1>
-        <p className="text-lightGray xl:text-lg text-sm font-medium">{text}</p>
+        <h1 className="2xl:text-5xl xl:text-3xl text-xl font-bold">
+          {title}
+        </h1>
+        <p className="text-lightGray xl:text-lg text-sm font-medium">
+          {text}
+        </p>
       </CardText>
     </div>
   );

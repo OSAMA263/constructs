@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
 
 export default function SlideUpElement(props) {
-  const { styles, children, ind = 1, offsetY = 0, offsetX = 0 } = props;
+  const {
+    styles,
+    children,
+    ind = 1,
+    offsetY = 0,
+    offsetX = 0,
+  } = props;
   return (
     <motion.div
       className={styles ?? ""}
@@ -14,15 +20,19 @@ export default function SlideUpElement(props) {
 }
 
 const SlideAnimation = {
-  initial: ({ offsetY, offsetX }) => ({ opacity: 0, y: offsetY, x: offsetX }),
+  initial: ({ offsetY, offsetX }) => ({
+    opacity: 0,
+    y: "10%",
+    x: offsetX,
+  }),
   whileInView: ({ ind }) => ({
     opacity: 1,
-    y: "0%",
+    y: 0,
     x: "0%",
     transition: {
       y: { duration: 0.9, delay: 0.1 * ind },
       x: { duration: 0.9, delay: 0.5 * ind },
-      opacity: { duration: 0.9, delay: 0.3 * ind },
+      opacity: { duration: 0.9, delay: 0.1 * ind },
     },
   }),
   viewport: { once: true },

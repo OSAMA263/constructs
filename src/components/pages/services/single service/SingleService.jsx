@@ -37,7 +37,7 @@ const Hero = (props) => {
 
       <div
         style={{
-          background: `url('${background}')`,
+          backgroundImage: `url('${background}')`,
           backgroundAttachment: "fixed",
           backgroundRepeat: "no-repeat",
           objectFit: "cover",

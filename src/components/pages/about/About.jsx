@@ -70,10 +70,10 @@ const Hero = () => {
       </div>
       <p className="tracking-widest text-darkGray">MEET OUR TEAM</p>
       <p className="min-w-[80%] max-w-[50%] text-center lg:text-lg">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-        convallis.
+        A decade of building residential, commercial, and
+        infrastructure projects that stand the test of time.
       </p>
-      <LimeButtonArrow  text="learn more">
+      <LimeButtonArrow text="learn more">
         <Link smooth to="our story"></Link>
       </LimeButtonArrow>
     </div>
